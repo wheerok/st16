@@ -1,5 +1,6 @@
 *.psd
 *.ai
 *.pptx
+.DS_Store
 참고문서/
 연습/
