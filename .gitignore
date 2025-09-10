@@ -1,7 +1,7 @@
 *.psd
 *.ai
 *.pptx
-.DS_Store
+*.DS_Store
 *.zip
 참고문서/
 연습/
