@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table 연습1</title>
+  </head>
+  <body>
+    <!-- 2* 3 테이블
+  2줄 <tr></tr> 
+  3칸 tr안에 td*3
+  -->
+    <table border="1">
+      <tr>
+        <!-- td*3>{데이타$} -->
+        <td>데이타1</td>
+        <td>데이타2</td>
+        <td>데이타3</td>
+      </tr>
+      <tr>
+        <td>데이타4</td>
+        <td>데이타5</td>
+        <td>데이타6</td>
+      </tr>
+    </table>
+    <!-- //2*3 -->
+    <!-- 4*2 -->
+    <!-- table>tr*4>td*2>{내용} -->
+    <table border="1">
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+    </table>
+    <!-- 3*3 -->
+    <table border="1">
+      <tr>
+        <!-- th*3>{제목$} -->
+        <th>제목1</th>
+        <th>제목2</th>
+        <th>제목3</th>
+      </tr>
+      <!-- tr>td*3>{내용$@4} -->
+      <tr>
+        <td>내용4</td>
+        <td>내용5</td>
+        <td>내용6</td>
+      </tr>
+      <!-- tr>td*3>{내용$@7} -->
+      <tr>
+        <td>내용7</td>
+        <td>내용8</td>
+        <td>내용9</td>
+      </tr>
+    </table>
+    <!-- 3*3 thead tbody -->
+    <table border="1">
+      <thead>
+        <!-- tr>th*3>{제목$} -->
+        <tr>
+          <th>제목1</th>
+          <th>제목2</th>
+          <th>제목3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- tr>td*3>{내용$@4} -->
+        <tr>
+          <td>내용4</td>
+          <td>내용5</td>
+          <td>내용6</td>
+        </tr>
+        <!-- tr>td*3>{내용$@7} -->
+        <tr>
+          <td>내용7</td>
+          <td>내용8</td>
+          <td>내용9</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- 셀의 병합 -->
+     <!-- 3*4 -->
+     <table border="1" class="test">
+       <!-- tr*3>td*4>{내용} -->
+        <!-- 1row -->
+       <thead>
+         <tr>
+          <th>제목</th>
+          <th>제목</th>
+          <th colspan="2">제목</th>
+          <!-- <td>내용</td> 제거-->
+         </tr>
+       </thead>
+       
+       <tbody>
+         <!-- 2row -->
+         <tr>
+          <th rowspan="2">제목</th>
+          <td>내용</td>
+          <td>내용</td>
+          <td>내용</td>
+         </tr>
+         <!-- 3row -->
+         <tr>
+          <!-- <td>내용</td> 병합을 위해서 제거-->
+          <td>내용</td>
+          <td>내용</td>
+          <td>내용</td>
+         </tr>
+       </tbody>
+
+     </table>
+     <style>
+      .test>thead{background-color: #8866cc;}
+      .test>tbody{background-color: #cc8866;}
+     </style>
+   
+  </body>
+</html>
