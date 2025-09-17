@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>display </title>
+  <!-- 
+  1. 메뉴를 수평으로 표시
+  2. 하지만 메뉴 여백을 동일하게
+  -->
+  <style>
+    *{margin:0; padding: 0;}
+    header{
+      width: auto;
+      border-bottom: 1px solid #efefef;
+    }
+    nav{
+      width:80%;
+      padding-left:50px;
+      box-sizing: content-box;
+    }
+
+    nav ul.gnb{
+      list-style: none;
+    }
+    nav ul.gnb li{
+      display: inline-block;
+      width:auto;
+      text-align: center;
+    }
+    nav ul.gnb li a{
+      display: inline-block;
+      width:auto;
+      padding:0.5em 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="gnb">
+        <li><a href="">long long menu1</a></li>
+        <li><a href="">menu2</a></li>
+        <li><a href="">menu3</a></li>
+        <li><a href="">menu4</a></li>
+        <li><a href="">m5</a></li>
+      </ul>
+    </nav>
+
+  </header>
+</body>
+</html>
