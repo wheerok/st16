@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-size</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container{
+      margin:50px;
+      background-color: #ccc;
+    }
+    .box{
+      width: 200px; height: 300px;
+      border: 1px solid #000;
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .box1{
+      background-color: #ef6;
+      background-image: url(images/sun.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .box2{
+      background-color: dodgerblue;
+      background-image: url(images/img3.png);
+      background-size: 150px;
+       /* background-size: 수평 수직;
+       background-size: 수평 auto;
+       background-size: 수평;
+       수평크기맞게 기존 비율로 수직크기를 결정
+      ; */
+      background-position: 70px 170px;
+      background-repeat: no-repeat;
+    }
+    .box3{
+      background-color: #f6e;
+      background-image: url(images/bg.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center bottom;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+  </div>
+</body>
+</html>

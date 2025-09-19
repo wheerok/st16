@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>위로 아래로 버튼</title>
+  <style>
+    *{margin:0; padding: 0;}
+    /* 위로 아래로 버튼 */
+    .go-btn{
+      position: fixed;
+      right: 50px;
+      bottom:200px;
+    }
+    .go-btn .btn-wrap{
+      box-sizing: border-box;
+      width: 48px; height: 48px;
+      padding-top:48px;
+      border:1px solid #333;
+      margin-bottom: 50px;
+      overflow: hidden;
+      background-color: #fff;
+    }
+    .go-btn .btn-wrap.up{
+      background-image: url(./images/up.png);
+    }
+    .go-btn .btn-wrap.down{
+      background-image: url(./images/down.png);
+    }
+
+    /* 문서 섹션 모양 지정 */
+    #section1{
+      height: 2000px;
+      background-color: #ccc;
+    }
+    #footer{
+      height: 100px;
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <section id="section1"></section>
+  <section id="footer"></section>
+  <div class="go-btn">
+    <a href="#section1">
+      <div class="btn-wrap up">
+        <span>Top</span>
+      </div>
+    </a>
+    <a href="#footer">
+      <div class="btn-wrap down">
+        <span>Down</span>
+      </div>
+    </a>
+  </div>
+</body>
+</html>

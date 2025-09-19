@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다중 배경 이미지</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      width: 100%;
+      height: 100vh;
+      /* 
+      background
+      단축표기법 : 순서상관x 하지만 position/size 순서를 지켜주세요
+      생략하면 기본값
+      */
+      /* background: #ef6 url(images/sun.png) no-repeat 95% 50px/150px ; */
+      background-color: #ef6;
+      background-image: 
+       url(./images/flower.png),
+       url(./images/field2.png),
+       url(./images/sun.png);
+
+      background-repeat: 
+          repeat-x, repeat-x, no-repeat; 
+      background-position: 
+         center bottom, left bottom, 95% 50px;
+      background-size: 
+         auto 180px, auto 100px , auto;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

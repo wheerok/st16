@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background</title>
+  <style>
+    *{padding: 0; margin: 0;}
+    .box{
+      width: auto;
+      /* 
+      .box 요소의 자식요소 크기가 높이가 되는데
+      최소크기만 500px
+      */
+      min-height: 500px;
+
+      margin:50px;
+      border:10px dotted #f00;
+      background-color: #6ef;
+      background-image: url(./images/img1.png);
+    }
+    .box2{
+      background-image: url(./images/sun.png);
+    }
+    .box3{
+      background-image: url(./images/bg.jpg);
+
+    }
+  </style>
+</head>
+<body>
+  <div class="box box1">Lorem, ipsum dolor. </div>
+
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+</body>
+</html>
