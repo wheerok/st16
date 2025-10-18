@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <title>세금계산서 신청양식 작성</title>
+    <!--@css(/css/module/order/ec_orderform/form_onetouch_popup.css)-->
+    <!--@js(/js/popup_scroll.js)-->
+    <!--@js(/layout/basic/js/common.js)-->
+</head>
+<body id="popup" class="v2">
+<div module="MyShop_OrderIssueTax" class="ec-base-layer">
+    <!-- 이값은 지우면 안되는 값입니다.
+        $isRuleBasedAddrForm = T
+    -->
+    <div class="header">
+        <h1>세금계산서 신청양식 작성</h1>
+    </div>
+
+    <div class="wrap">
+        {$form.order_id}
+
+        <div class="ec-base-card">
+            <div class="card-head">
+                <h2>도움말</h2>
+            </div>
+            <div class="card-content">
+                <div class="ec-base-help">
+                    <ul>
+                        <li>세금 계산서 발행 신청을 위해 아래 모든 입력사항을 빠짐없이 입력하십시오.</li>
+                        <li>[확인] 버튼을 눌러주십시오. 비영리 법인인 경우는 종목과 업태를 입력하지 않아도 됩니다.</li>
+                        <li>신청양식 작성 후 사업자 등록증 사본을 팩스({$fax_number})로 보내주십시오.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ec-base-card">
+            <div class="card-head">
+                <h2>신청자 정보</h2>
+            </div>
+            <div class="card-content">
+                <div class="ec-base-table typeWrite">
+                    <table>
+                        <caption>신청자 정보</caption>
+                        <tbody>
+                            <tr>
+                                <th scope="row">{$form_label.name}<span class="icoRequired">필수</span></th>
+                                <td>{$form.name}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">{$form_label.phone}<span class="icoRequired">필수</span></th>
+                                <td>{$form.phone}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">{$form_label.email}<span class="icoRequired">필수</span></th>
+                                <td><div class="ec-base-mail">{$form.email}</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="ec-base-card">
+            <div class="card-head">
+                <h2>사업자 정보</h2>
+            </div>
+            <div class="card-content">
+                <div class="ec-base-table typeWrite">
+                    <table>
+                        <caption>사업자 정보</caption>
+                        <tbody>
+                            <tr>
+                                <th scope="row">{$form_label.company_type}<span class="icoRequired">필수</span></th>
+                                <td>{$form.company_type}
+                                    <div class="innerForm">
+                                        <dl>
+                                            <dt>{$form_label.company_regno}<span class="icoRequired">필수</span></dt>
+                                            <dd>{$form.company_regno}</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>{$form_label.company_name}<span class="icoRequired">필수</span></dt>
+                                            <dd>{$form.company_name}</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>{$form_label.president_name}<span class="icoRequired">필수</span></dt>
+                                            <dd>{$form.president_name}</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>{$form_label.mall_addr}<span class="icoRequired">필수</span></dt>
+                                            <dd>{$form.mall_addr}</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>{$form_label.company_condition}<span class="icoRequired">필수</span></dt>
+                                            <dd>{$form.company_condition}</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>{$form_label.company_line}<span class="icoRequired">필수</span></dt>
+                                            <dd>{$form.company_line}</dd>
+                                        </dl>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer ec-base-button">
+        <button type="submit" class="btnSubmit">확인</button>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:self.close();">닫기</button>
+</div>
+</body>
+</html>

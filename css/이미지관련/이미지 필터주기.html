@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 필터 주기</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    body{
+      font-family: Pretendard;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+      .hero-wrap{
+      /*hero-wrap .slogan 기준요소 */
+        position: relative;
+      /* width:100vw; 스크롤바 공간까지 포함한 너비 */
+      width:100%;
+    }
+
+  .hero-wrap .img-wrap{
+    width: 100%;
+    height: 100vh;
+  }
+  .hero-wrap .img-wrap img{
+    display: block;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: blur(5px) grayscale(100%);
+    transition: filter 0.5s;
+  }
+
+  .hero-wrap .img-wrap img:hover{
+     filter: blur(0px) grayscale(0%);
+     transition: filter 1s;
+  }
+
+
+   .hero-wrap .slogan{
+    /* 
+    position: absolute;
+    1. 기준 요소 :.hero-wrap
+    2. 위치 지정
+    3. 너비/높이
+    */
+    /* 요소의 위치를 부모의 가운데 배치 */
+    position: absolute; /*1 2*/
+    left:50%; top:50%; /*2*/
+    transform: translate(-50%, -50%);/*2*/
+
+    background-color: rgba(255,255,255,0.8);
+    /* box-shadow:  0px 0px 10px 0px rgba(255,255,255,1); */
+    box-shadow:  0px 0px 20px 0px rgba(0,0,0,0.5);
+    /* em
+    font-size 속성을 제외한 css 속성에 지정하면
+    해당요소으이 font-size 기준
+    */
+    padding: 1em 2em;  /*3*/
+    width: 70%;/*3*/
+    max-width: 700px; /*3*/
+    min-width: 470px;/*3*/
+   }
+   .hero-wrap .slogan .title{
+     /* em 
+     font-size에 지정된 em 부모의 font-size를 기준
+     */
+     font-size: 3em;  /*16px * 3*/
+     font-weight: 200;
+   }
+   .hero-wrap .slogan .desc{
+    font-size: 1.2em;
+    font-weight: 300;
+   }
+
+    /* <img src="https://images.pexels.com/photos/6207744/pexels-photo-6207744.jpeg" alt=""> */
+
+  </style>
+</head>
+<body>
+
+  <div class="hero-wrap">
+    <div class="img-wrap"><img src="https://images.pexels.com/photos/6207744/pexels-photo-6207744.jpeg" alt=""></div>
+    <!-- div.slogan>p.title+p.desc -->
+    <div class="slogan">
+      <!-- lorem2 2단어
+         lorem*2 2문단
+      -->
+      <p class="title">Lorem, ipsum dolor.</p>
+      <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa illum quis voluptatibus!</p>
+    </div>
+  </div>
+
+  
+</body>
+</html>

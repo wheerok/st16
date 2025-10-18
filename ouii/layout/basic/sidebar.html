@@ -1,0 +1,47 @@
+<aside id="aside" module="layout_slidePackage" data-ez="contents-1u07nih-1">
+    <!--@css(/layout/basic/css/slideMenu.css)-->
+	<!--@js(/layout/basic/js/slide_menu.js)-->
+	<div class="navigation_member">
+		<div class="side_logo" module="Layout_LogoTop"><a href="/"><img src="{$logo}" alt="{$mall_name}"></a></div>
+
+		<div class="navigation_state" data-ez-group="top-util-menu" data-ez-role="list">
+			<a data-ez-item="join" module="Layout_statelogoff" href="/member/agreement.html">회원가입</a>
+			<a data-ez-item="login" module="Layout_statelogoff" href="/member/login.html">로그인</a>
+			<a data-ez-item="modify" module="Layout_stateLogon" href="/member/modify.html">내정보수정</a>
+			<a data-ez-item="logout" module="Layout_stateLogon" href="{$action_logout}">로그아웃</a>
+			<a data-ez-item="order" href="/myshop/order/list.html">주문조회</a>
+			<a data-ez-item="mypage" module="Layout_stateLogon" href="/myshop/index.html">마이페이지</a>
+			<a data-ez-item="recent" href="/product/recent_view_product.html">최근본상품</a>
+		</div><!-- //navigation_state -->
+	</div><!-- //navigation_member -->
+
+    <nav class="navigation-menu" role="navigation">
+		<div data-ez-module="menu-side/1"><div id="slideCateList" class="navigation-menu__category">
+  <ul id="slide_add_category"><li><a href="/category/%EC%8B%A0%EC%83%81%ED%92%88/58/" class="view">신상품</a></li><li><a href="/category/%EA%B0%80%EC%9D%84%EC%8B%A0%EC%83%81/59/" class="view">가을신상</a></li><li><a href="/category/%EA%B7%80%EA%B1%B8%EC%9D%B4/42/" class="view">귀걸이</a><ul class="sub_cate01"><li><a href="/category/%EC%A4%91%EB%B6%84%EB%A5%981/47/" class="view">중분류1</a></li><li><a href="/category/%EC%A4%91%EB%B6%84%EB%A5%982/48/" class="view">중분류2</a><ul class="sub_cate02"><li><a href="/category/%EC%86%8C%EB%B6%84%EB%A5%981/49/" class="view">소분류1</a></li><li><a href="/category/%EC%86%8C%EB%B6%84%EB%A5%982/50/" class="view">소분류2</a><ul class="sub_cate03"><li><a href="/category/%EC%83%81%EC%84%B8%EB%B6%84%EB%A5%981/51/" class="view">상세분류1</a></li><li><a href="/category/%EC%83%81%EC%84%B8%EB%B6%84%EB%A5%982/52/" class="view">상세분류2</a></li></ul></li></ul></li></ul></li><li><a href="/category/%EB%AA%A9%EA%B1%B8%EC%9D%B4/43/" class="view">목걸이</a></li><li><a href="/category/%EB%B0%98%EC%A7%80/44/" class="view">반지</a></li><li><a href="/category/%EC%8B%9C%EA%B3%84/45/" class="view">시계</a></li><li><a href="/category/%EA%B8%B0%ED%83%80/46/" class="view">기타</a></li><li><a href="/category/%ED%85%8C%EC%8A%A4%ED%8A%B8/53/" class="view">테스트</a></li><li><a href="/category/%EC%83%81%EC%9D%98/55/" class="view">상의</a><ul class="sub_cate01"><li><a href="/category/%EB%8B%88%ED%8A%B8/56/" class="view">니트</a></li><li><a href="/category/%EB%B8%94%EB%9D%BC%EC%9A%B0%EC%8A%A4/57/" class="view">블라우스</a></li></ul></li></ul>
+  </div></div><!-- //menu-side/1 -->
+
+		<div class="cboth slide_line"></div>
+
+        <div module="Layout_BoardInfo" class="navigation-menu__board">
+			<div class="title">고객센터<button type="button" class="icoCategory">펼침</button></div>
+            <ul class="categoryList">
+                <li><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
+                <li><a href="{$link_board_list}">{$board_name}</a> {$board_adult_icon}</li>
+            </ul>
+        </div><!-- //navigation-menu__board -->
+
+		<div module="Layout_multishopList">
+			<button type="button" class="toggle">{$current_language} <i aria-hidden="true" class="icon icoArrowBottom"></i></button>
+			<ul module="Layout_multishopListitem">
+				<li class="{$selected_class}">
+					<a href="//{$shop_domain}/">{$locale_language}</a>
+				</li>
+				<li class="{$selected_class}">
+					<a href="//{$shop_domain}/">{$locale_language}</a>
+				</li>
+			</ul>
+		</div>
+    </nav>
+    <button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose"></i>닫기</button>
+</aside>
+<!--#ez="1/2"-->

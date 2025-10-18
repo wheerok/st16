@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aspect-ratio 가로세로 비율로 크기 지정</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container{
+      background-color: #ccc;
+      margin: 50px;
+      font-size: 0;/*display:inline-block 여백을 없애기 위해서*/
+    }
+    .box{
+      display: inline-block;
+      width:100px; 
+      /* min-height: 100px; */
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    /* 
+    aspect-ratio: 가로비율/세로비율
+    */
+    .box1{aspect-ratio: 1/1;}
+    .box2{aspect-ratio: 0.5/1;}
+    .box3{aspect-ratio: 4/3;}
+    .box4{aspect-ratio: 16/9;}
+  </style>
+</head>
+<body>
+  <!-- .container>.box.box$*4>{box$} -->
+  <div class="container">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>

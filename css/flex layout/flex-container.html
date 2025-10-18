@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-container</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .section {
+      padding: 30px;
+    }
+
+    .section-title {
+      background-color: #ccc;
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    .section-content {
+      padding-top: 30px;
+    }
+
+    .section-content .item {
+      width: 100px;
+      min-height: 100px; /*flex layout 할때는 크기 고정 x*/
+      background-color: dodgerblue;
+      border: 1px solid darkblue
+    }
+
+    .section-content>div {
+      background-color: #f6e;
+    }
+
+    /* flex box 선언 */
+    .flex-container1 {
+      display: flex;
+      /*해당 요소는 flex-container
+      직계 자식요소는 flex item
+      */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .section>.section-title+.section-content -->
+  <div class="section">
+    <div class="section-title">1. flex-container 선언</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+  </div>
+  <!-- flex-direction -->
+  <style>
+    /* 
+    display: flex;
+    .flex-container의 직계자식(item)의 주축의 크기는 항상 
+    container의 크기에 맞게 유연하게(flexible) 크기가 조절
+    */
+    .flex-container2 {
+      display: flex;
+      flex-direction: row;
+      /* flex-direction: column; */
+    }
+  </style>
+  <div class="section">
+    <div class="section-title">2. flex item 방향 지정 flex-direction</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .flex-container3, .flex-container4{
+      display: flex;
+      margin-bottom:30px;
+      min-height:600px ;
+      /*column 방향의 정렬 예로 보여주기위해*/
+    }
+    .flex-container3{
+      /* flex 방향을 결정-> flex 주축 ,교차축 결정 */
+      flex-direction: row;
+      /*주축의 .container에서 item의 정렬*/
+      justify-content: center;
+       /*교차축의 .container에서 item의 정렬*/
+      align-items:stretch;/*기본값*/
+    }
+    .flex-container4{
+       /* flex 방향을 결정-> flex 주축 ,교차축 결정 */
+      flex-direction: column;
+       /*주축의 .container에서 item의 정렬*/
+      justify-content: center;
+        /*교차축의 .container에서 item의 정렬*/
+      align-items: end;
+    }
+  </style>
+  <div class="section">
+    <div class="section-title">3. 주축의 정렬/교차축의 정렬</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+      <div class="flex-container4">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+
+</body>
+
+</html>

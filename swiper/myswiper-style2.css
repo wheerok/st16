@@ -1,0 +1,137 @@
+:root{
+  --primary-color: #000000;
+  --accent-color:#33ffaa;
+}
+
+.myname{
+  --myswiper-bullet-color:var(--primary-color);
+  --myswiper-border-radius : 99999px;
+  --myswiper-bullet-width:8px;
+  --myswiper-bullet-height:8px;
+  --myswiper-bullet-opacity:0.4;
+  --myswiper-bullet-active-opacity:1;
+  --myswiper-bullet-active-color:var(--accent-color);
+
+  --myswiper-padding-bottom:35px;
+
+  --myswiper-scrollbar-bottom:var(var(--myswiper-padding-bottom))
+  --myswiper-scrollbar-top:auto;
+  --myswiper-scrollbar-left:0;
+  --myswiper-scrollbar-height:4px;
+  --myswiper-scrollbar-width:100%;
+
+  --myswiper-nav-button-width:16px;
+}
+
+/*****
+myswiper-util
+progressbar와 nav button을 나란히 레이아웃배치
+*/
+.myname .myswiper-util{
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  gap:20px;
+  height: var(--myswiper-padding-bottom);
+}
+
+.myname .myswiper-util>div{
+  /* flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto; */
+}
+
+/********
+ siwper navigation 
+ 색상 + 위치(absolute 제거)
+*/
+
+.myname .myswiper-nav{
+  display: flex; /*nav 버튼을 일렬로 만들기*/
+  box-sizing: border-box;
+  gap: 16px;
+}
+.myname .swiper-button-next , 
+.myname .swiper-button-prev {
+  position: static;
+  margin-top:0;
+  /*버튼크기변경*/
+  width: var(--myswiper-nav-button-width); 
+  height: var(--myswiper-nav-button-width);
+
+  box-sizing: border-box;
+}
+.myname .swiper-button-next svg path, 
+.myname .swiper-button-prev svg path{
+        fill: rgba(0,0,0,1);
+}
+
+.myname .swiper-button-next:hover svg path, 
+.myname .swiper-button-prev:hover svg path{
+        fill: #000;
+}
+
+/****
+swiper pagination
+색상변경 bullet의 모양 변경 변수선언
+*/
+
+.myname.swiper{
+  padding-bottom: var(--myswiper-padding-bottom); /*pagination의 위치를 그림밖으로 이동*/
+}
+.myname .swiper-pagination-bullet {
+    background: var(--myswiper-bullet-color);
+    border-radius: var(--myswiper-border-radius);
+    display: inline-block;
+    height: var(--myswiper-bullet-height);
+    opacity: var(--myswiper-bullet-opacity, .2);
+    width: var(--myswiper-bullet-width);
+}
+.myname .swiper-pagination-bullet-active {
+    background: var(--myswiper-bullet-active-color);
+    opacity: var(--myswiper-bullet-active-opacity, 1);
+}
+
+
+/******
+swiper-pagination-progressbar
+위치 변경 + position:absolute 제거
+*/
+  .myname .swiper-pagination-progressbar .swiper-pagination-horizontal, 
+  .myname.swiper-horizontal .swiper-pagination-progressbar {
+      position: static;
+      height: var(--swiper-pagination-progressbar-size, 4px);
+      left: 0;
+      top: auto;
+      bottom: 0;
+      width: calc(100% - (var(--myswiper-nav-button-width) * 2));
+      background:var(--primary-color);
+  }
+
+
+/*********
+swiper scrollbar
+위치조정  변수선언
+
+*/
+
+.swiper-scrollbar.swiper-scrollbar-horizontal,
+.swiper-horizontal>.swiper-scrollbar{
+  
+  bottom: var(--myswiper-scrollbar-bottom);
+  height: var(--myswiper-scrollbar-height, 4px);
+  left: var(--myswiper-scrollbar-left);
+  position: absolute;
+  top: var(--myswiper-scrollbar-top);
+  width: var(--myswiper-scrollbar-width) ;
+  z-index: 50;
+  
+  background:rgba(0,0,0,0.5);
+  border-radius: 0;
+  
+}
+
+.myname .swiper-scrollbar-drag {
+  /* background: rgba(255,255,255,1); */
+  background: rgba(0,0,0,1);
+}

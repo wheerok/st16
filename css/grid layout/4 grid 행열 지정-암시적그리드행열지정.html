@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 grid 행열 지정-암시적그리드행열지정</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    .grid-container *{box-sizing: border-box;}
+    /* 모양 */
+    .grid-container{
+      background-color: pink;
+      min-height: 600px; /*정렬을 위해서 테스트용*/
+    }
+    .item{
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+    }
+    /* grid */
+    .grid-container{
+      /* 1 그리드 선언 */
+      display: grid;
+      /* 2 행열 수와 크기 */
+
+      /* 2줄 3칸 */
+      grid-template-rows:repeat(2, 100px) ;
+      grid-template-columns: 100px 200px minmax(500px, 1fr);
+
+
+      /* 3 정렬 지정 */
+      /* 
+      content  container안에서 item덩어리들의 정렬
+      */
+      justify-content:start;/*container안수평*/
+      align-content: center;
+
+      /* 4 item간의 여백
+      container와item사이에 여백x
+      gap: 수평 수직
+      
+       justify-content, align-content space-* 값이 설정되어있을 때는 gap 무시
+      */
+      gap:10px 10px;
+
+
+      /* 
+      4 암시적 그리드 크기 설정
+      지정된 줄,칸 이외에 자리잡게되는 아이템들의 크기를 지정
+      grid-auto-rows, grid-auto-colomns  암시적 그리드 크기 지정
+      2줄 3칸
+      아이템9개
+      아이템1 아이템2 아이템3
+      아이템4 아이템5 아이템6
+
+      지정된 열행 외의 아이템들
+      아이템7 아이템8 아이템9  -> 암시적 그리드 
+      grid-auto-row, grid-auto-colomn  암시적 그리드 크기 지정
+      */
+      grid-auto-rows: 100px;
+
+    }
+  </style>
+</head>
+<body>
+  <!-- .grid-container>.item*6{item$} -->
+  <div class="grid-container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+     <div class="item">item7</div>
+    <div class="item">item8</div>
+    <div class="item">item9</div>
+
+  </div>
+</body>
+</html>

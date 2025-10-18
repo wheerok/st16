@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex2 - 양끝 정렬</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    body{margin-top: 50px;}
+    .container{
+      background-color: #ccc;
+      padding:30px;
+    }
+    .item1{
+      width: 100px; min-height: 50px;
+      background-color: #6cf;
+    }
+    .item2{
+      width: 200px; min-height: 30px;
+      background: #c6f;
+    }
+    /* flex */
+    .container{
+      display: flex;
+      /* flex-direction: row; item 배치 좌-우*/
+      /* flex-wrap: nowrap; */
+      justify-content: space-between;/*주축 정렬*/
+      /*align-items: center; 교차축 가운데*/
+      align-items: end;
+    }
+  </style>
+</head>
+<body>
+  <!-- .container>.item*2.item$>{item$} -->
+  <div class="container">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+  </div>
+</body>
+</html>

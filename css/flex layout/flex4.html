@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex4 - 한item에 flex container의 여유공간을 몰아줘요</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    body{margin-top: 50px;}
+    .container{
+      background-color: #ccc;
+      padding:30px;
+    }
+    .item1{
+      width: 100px; min-height: 50px;
+      background-color: #6cf;
+    }
+    .item2{
+      width: 400px; min-height: 30px;
+      background: #c6f;
+    }
+    .item3{
+      width: 200px; min-height: 30px;
+      background: #cf6;
+    }
+    /* flex */
+    .container{
+      display: flex;
+      /* flex-direction: row; item 배치 좌-우*/
+      /* flex-wrap: nowrap; */
+      justify-content: space-between;/*주축 정렬*/
+      /*align-items: center; 교차축 가운데*/
+      align-items: end;
+      gap:20px;
+    }
+
+    .item{
+      /* flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto; */
+    }
+    .item2{
+      flex-grow: 1;
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+  <!-- .container>.item*2.item$>{item$} -->
+  <div class="container">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>인라인 레벨과 블록레벨</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: #ccc;
+    }
+
+    .inner {
+      /* 부모의 content영역의 80% */
+      width: 80%;
+      margin: 0 auto;
+      padding: 50px 0;
+      /* background-color: #ef6; */
+    }
+
+    .box {
+      /* margin:50px auto; */
+      margin-bottom: 50px;
+      background-color: #fbf;
+    }
+
+    .box:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 
+  인라인레벨 width/height 지정x
+            수직 여백 정상적으로 적용x
+           크기는 포함는 내용이 결정
+    */
+    .box span{ 
+      color:#f00;
+      font-weight: bold;
+      font-size: large;
+      background-color: #ef8;
+      padding:16px;
+      margin:8px;
+      width:200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .container>.box.box$*2>lorem -->
+  <div class="container">
+    <div class="inner">
+      <div class="box box1">
+        Lorem <span>가나다라 ipsum</span> dolor sit amet consectetur adipisicing <span>elit</span>.
+        Exercitationem veritatis obcaecati, fuga quas deserunt ipsa
+        aspernatur, fugit atque iusto expedita quasi odit maxime. Possimus
+        omnis dicta consequuntur soluta at nam.
+      </div>
+      <div class="box box2">
+        Inventore non eligendi ab quasi. Sint provident magnam ipsam omnis. At
+        ipsam, aut ipsum a veritatis suscipit nihil adipisci cupiditate. Nisi
+        dolor veritatis officia consectetur dicta, iste magnam quas
+        perspiciatis.
+      </div>
+      <div class="box box3">
+        Inventore non eligendi ab quasi. Sint provident magnam ipsam omnis. At
+        ipsam, aut ipsum a veritatis suscipit nihil adipisci cupiditate. Nisi
+        dolor veritatis officia consectetur dicta, iste magnam quas
+        perspiciatis.
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

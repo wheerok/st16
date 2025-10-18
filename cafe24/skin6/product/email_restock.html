@@ -1,0 +1,40 @@
+<!--@layout(/layout/basic/popup.html)-->
+<div module="Product_RestockEmail" class="ec-base-layer">
+    <!--@css(/css/module/product/restock_email.css)-->
+    <div class="header">
+        <h1>재입고 알림 신청</h1>
+    </div>
+    <div class="content">
+        <div class="ec-base-box typeProduct">
+            <p class="thumbnail"><img src="{$product_image}" alt="" onerror="this.src='//img.echosting.cafe24.com/thumb/75x75.gif'" /></p>
+            <div class="information">
+                <h2>{$product_name}</h2>
+                <p>옵션정보</p>
+                <p>{$restock_option_name}</p>
+
+                <div class="optionWrap">
+                    <ul module="Product_optionstock">
+                        <li>
+                            <span class="name">{$option_name}</span>
+                            <div class="option">{$form.option}<p class="value">{$option_desc}</p></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="emailArea">
+            <div class="contact">
+                <p><strong>{$member_id}</strong>님의 메일주소<br /><span>- 상품 재입고 시 알림을 받을 이메일 주소를 입력해 주세요.</span></p>
+                <p>{$form.email}</p>
+            </div>
+            <ul class="info">
+                <li>재입고 알림 신청이 완료된 상품은 관심상품 목록에 저장되어요.</li>
+                <li>알림 신청한 상품의 가격 또는 옵션 정보가 재입고시 변경될 수 있으므로, 반드시 상품 정보를 확인 후 구매해 주세요.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ec-base-button">
+        <button type="button" onclick="{$action_write}" class="btnSubmitFix sizeM">확인하기</button>
+        <button type="button" onclick="window.close();" class="btnNormalFix sizeM">취소하기</button>
+    </div>
+</div>

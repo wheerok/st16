@@ -7,12 +7,16 @@
   <style>
     *{margin:0; padding:0;}
     .container{
+      /* border-width: 1px;
+      border-style: solid;
+      border-color: #f00; */
       border:1px solid #f00;
       background-color: #ccc;
       width:300px;
-      margin:50px auto;
+      margin:50px auto;/*가운데 정렬*/
     }
     .box{
+      /* width:auto; */
       width:200px;
       height: 200px;
       border:1px solid #000;
@@ -42,10 +46,15 @@
       border-width: 10px;
       padding:10px;
     }
- 
+    /* 
+    수평크기
+    ml 50px bl 10  pl 10  w 200 pr 10 br10 mr 50
+    =340px
+    */
   </style>
 </head>
 <body>
+  <!-- .container>.box.box$*5>{box$} -->
   <div class="container">
     <div class="box box1">box1</div>
     <div class="box box2">box2</div>

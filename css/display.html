@@ -11,33 +11,51 @@
   <style>
     *{margin:0; padding: 0;}
     header{
-      width: auto;
+      width: auto;/*작성하지 않아도 기본값*/
+      /* background-color: #ccc; */
       border-bottom: 1px solid #efefef;
     }
     nav{
       width:80%;
       padding-left:50px;
+      /*지정하지않으면 기본값*/
       box-sizing: content-box;
+
+      /* background-color: #ef6; */
     }
 
     nav ul.gnb{
+
+      /* 목록 블릿을 제거 */
       list-style: none;
+
+      /* background-color: #f6c; */
     }
     nav ul.gnb li{
+      /* 블록레벨을 줄바꿈없이 한줄로
+        하지만 크기를 지정가능
+      */
       display: inline-block;
       width:auto;
+      /* padding: 1em 2em; */
+      /* width:130px;  너비 지정x*/
+      /* background-color: #6cf; */
       text-align: center;
     }
     nav ul.gnb li a{
+      /* display 선언하지 않으면 inline */
+      /* 동일한 a 태그마다 여백지정 */
       display: inline-block;
-      width:auto;
+      width:auto;/*지정하지 않아도 기본값*/
       padding:0.5em 2em;
+      /* background-color: #fff; */
     }
   </style>
 </head>
 <body>
   <header>
     <nav>
+      <!-- ul>li*5>a>{menu$} -->
       <ul class="gnb">
         <li><a href="">long long menu1</a></li>
         <li><a href="">menu2</a></li>

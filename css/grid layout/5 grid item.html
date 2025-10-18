@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 grid 아이템 배치</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    .grid-container *{box-sizing: border-box;}
+    /* 모양 */
+    .grid-container{
+      background-color: pink;
+      min-height: 600px; /*정렬을 위해서 테스트용*/
+    }
+    .item{
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+    }
+    /* grid */
+    .grid-container{
+      /* 1 그리드 선언 */
+      display: grid;
+      /* 2 행열 수와 크기 */
+
+      /* 2줄 3칸 */
+      grid-template-rows:repeat(3, 100px) ;
+      grid-template-columns: repeat(3, 1fr);
+
+
+      /* 3 정렬 지정 */
+      justify-content:start;/*container안수평*/
+      align-content: center;
+
+      /* 4 item간의 여백
+       justify-content, align-content space-* 값이 설정되어있을 때는 gap 무시
+      */
+      gap:10px 10px;
+
+
+      /* 
+      4 암시적 그리드 크기 설정
+      grid-auto-row, grid-auto-colomn  암시적 그리드 크기 지정
+      */
+      grid-auto-rows: 100px;
+
+    }
+
+    /* 5 그리드 아이템의 배치 */
+    .item:nth-child(1){
+      grid-column: 1/3;
+      grid-row: 1/2;
+    }
+    .item:nth-child(2){
+      grid-column: -1/-2;
+      /* grid-row: 1/3; */
+      grid-row: 1/span 2;
+    }
+    .item:nth-child(3){
+      grid-column: 1;
+      /* grid-row: 2/4; */
+      /* grid-row: 2/-1; */
+      grid-row: 2/span 2;
+    }
+    .item:nth-child(4){
+      grid-column: 2/span 2;
+      grid-row: 3;
+    }
+     .item:nth-child(5){
+      grid-column: 2;
+      grid-row: 2;
+    }
+    
+    /* 암시적 그리드 */
+     .item:nth-child(6){
+      grid-column: 1/-1;
+      grid-row: 4 /span 1;
+    }
+    
+
+
+  </style>
+</head>
+<body>
+  <!-- .grid-container>.item*6{item$} -->
+  <div class="grid-container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+
+
+  </div>
+</body>
+</html>

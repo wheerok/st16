@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper slides per view-wconcept</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin-top: 50px;
+    }
+
+    .visual-section{
+      overflow: hidden; /*★★★★★*/
+    }
+    .myslide.swiper {
+      width: 80%;
+      overflow: visible; /*★★★★★*/
+    }
+    .swiper-wrapper{
+      /* gap:20px; */
+      /* box-sizing: border-box; */
+    }
+
+    /* .swiper-wrapper(view)안에 내가 원하는 크기의 slide를 포함하게 하기위해서는 slide의너비를 지정
+    swiper 파라미터는
+    slidesPerView: 'auto'
+    */
+    .swiper-slide{
+      opacity: 0.5;
+      filter: grayscale(70%);
+    }
+     .swiper-slide.swiper-slide-active{
+      opacity: 1;
+      filter: grayscale(0);
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: calc(100vh - 170px);
+      /* height: auto; */
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+ 
+  <!--★★★★ <div class="visual-section">★★ -->
+  <div class="visual-section">
+    <div class="swiper myslide">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=1" alt=""></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=2" alt=""></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=3" alt=""></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=4" alt=""></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=5" alt=""></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=6" alt=""></div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+
+
+  <script>
+    //  html요소중 .swiper에 Swiper를 연결하겠다
+    const myslide = new Swiper('.myslide', {
+      
+
+      //.swiper-wrapper(view)에 몇개의 슬라이드 표시 
+      // 'auto'는 slide css를 크기를 따르거나 지정된 크기가 없으면 view(swiper-wrapper) 1개만 표시 
+      /*★★★★★*/
+      slidesPerView: 'auto', 
+      // 슬라이드사이여백
+      /*★★★★★*/
+      spaceBetween: 30,
+      // active 슬라이드가 가운데오게설정
+      /*★★★★★*/
+      centeredSlides: true,
+      // 무한반복
+      /*★★★★★*/
+      loop: true,
+
+
+
+      // 수평슬라이드
+      direction: 'horizontal',
+     
+      // 자동실행
+      //   autoplay: {
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      // },
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        // type : 'fraction',
+        // type : 'progressbar',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>
+</body>
+
+</html>

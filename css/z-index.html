@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      margin: 30px;
+      position: relative; /*.box3의 기준요소*/
+      background-color: #ccc;
+    }
+    .box {
+      width: 200px;     height: 200px;
+    }
+    .box1 {
+      background-color: #ef6;
+      position: static; left: 50px; top: 50px; /*적용x*/
+      z-index: 1000;
+    }
+    .box2 {
+      background-color: #6ef;
+      /* 기준:자신, 일반흐름o */
+      position: relative;  left: 50px;  top: 50px;
+      z-index: 200;
+    }
+    .box3 {
+      background-color: #e6f;
+      /* 기준:가까운 조상중 position:static 제외 선언
+        .container 기분요소(position:relative를 지정)
+        일반흐름 :x
+      */
+      position: absolute;
+      left: 60px;      top: 70px;
+      z-index: 100;
+    }
+    .box4 {
+      background-color: #275;
+      /* 
+      기준: 브라우저
+      일반흐름 : x
+      */
+      position: fixed;
+      left: 100px;      top: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .container>.box.box$*4>{box$} -->
+  <div class="container">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+
+</body>
+
+</html>

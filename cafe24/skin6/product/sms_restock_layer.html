@@ -1,0 +1,44 @@
+<!--@layout(/layout/basic/popup.html)-->
+<div module="Product_RestockSms" class="ec-base-layer">
+    <!--@css(/css/module/product/restockSms.css)-->
+    <div class="header">
+        <h1>재입고 알림 신청</h1>
+    </div>
+
+    <div class="content">
+        <div class="ec-base-box typeProduct">
+            <p class="thumbnail"><img src="{$product_image}" alt="" onerror="this.src='//img.echosting.cafe24.com/thumb/75x75.gif'" /></p>
+            <div class="information">
+                <h2>{$product_name}</h2>
+                <p>{$simple_desc}</p>
+                <p>{$opt_str}</p>
+                <p>{$option_add}</p>
+                <p>{$restock_option_name}</p>
+
+                <div class="optionWrap">
+                    <ul module="Product_optionstock">
+                        <li>
+                            <span class="name">{$option_name}</span>
+                            <div class="option">{$form.option}<p class="value">{$option_desc}</p></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="smsArea">
+            <div class="contact">
+                <p><strong>{$member_name}</strong>님의 휴대폰번호<br /><span>- 상품 재입고 시, 알림을 받을 휴대폰 번호를 입력해 주세요.</span></p>
+                <p>{$form.hp1} - {$form.hp2} - {$form.hp3} </p>
+            </div>
+            <ul class="info">
+            	<li>재입고 알림은 신청일로부터 <strong>{$restock_month}개월</strong> 간 유효하며, 기간이 지나면 재고 입고 시 알림이 발송되지 않습니다.</li>
+                <li>알림 신청한 상품의 가격 또는 옵션 정보가 재입고시 변경될 수 있으므로, 반드시 상품 정보를 확인 후 구매해 주세요.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ec-base-button">
+        <button type="button" onclick="{$action_close}" class="btnNormalFix sizeM">취소</button>
+        <button type="button" onclick="{$action_write}" class="btnSubmitFix sizeM">확인</button>
+    </div>
+</div>

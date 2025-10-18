@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table</title>
+</head>
+<body>
+  <p>첫줄 제목(th) 나머지 2,3,4 줄 td</p>
+  <p>4줄 4칸</p>
+  <!-- tr>th*2>{내용} -->
+    <!-- tr>td*2>{내용} -->
+ <!-- table>tr*2>td*2>{내용} -->
+ <table>
+  <tr>
+    <td>내용</td>
+    <td>내용</td>
+  </tr>
+  <tr>
+    <td>내용</td>
+    <td>내용</td>
+  </tr>
+ </table>
+ <hr>
+  <!-- table>tr>th*4{제목} -->
+  <table>
+    <tr>
+      <th>제목</th>
+      <th>제목</th>
+      <th>제목</th>
+      <th>제목</th>
+    </tr>
+  </table>
+  <hr>
+  <!-- table>tr>th*4{제목}^tr -->
+  <table>
+    <tr>
+      <th>제목</th>
+      <th>제목</th>
+      <th>제목</th>
+      <th>제목</th>
+    </tr>
+    <tr></tr>
+  </table>
+  <hr>
+  <!-- table>tr>th*3{제목$}^tr*2>td*3{내용$} -->
+  <table>
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목2</th>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+    </tr>
+  </table>
+  <hr>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    table{
+      border: 1px solid #f00;
+      width: 100%;
+      /* border-collapse: separate; */
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    tr{
+      border: 1px solid #0f0;
+    }
+    th, td{
+      border: 1px solid #00f;
+    }
+  </style>
+  <!-- table>tr>th*4{제목$}^tr*2>td*4{내용$} -->
+  <table>
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+</body>
+</html>

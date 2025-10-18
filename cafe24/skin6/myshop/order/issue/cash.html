@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <title>현금영수증 신청양식 작성</title>
+    <!--@css(/css/module/order/ec_orderform/form_onetouch_popup.css)-->
+    <!--@js(/js/popup_scroll.js)-->
+    <!--@js(/layout/basic/js/common.js)-->
+</head>
+<body id="popup" class="v2">
+<div module="MyShop_OrderIssueCash" class="ec-base-layer">
+    <div class="header">
+        <h1>현금영수증 신청양식 작성</h1>
+    </div>
+
+    {$form.order_id}
+
+    <div class="wrap">
+        <div class="ec-base-card gBorder">
+            <div class="ec-base-table typeWrite">
+                <table>
+                    <caption>현금영수증 신청양식</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">구분<span class="icoRequired">필수</span></th>
+                            <td>{$form.user_type}
+                                <div id="{$personal_info_id}" class="innerForm">
+                                    <dl>
+                                        <dt>핸드폰 번호<span class="icoRequired">필수</span>{$form.mobile_identity}</dt>
+                                        <dd>{$form.mobile}</dd>
+                                    </dl>
+                                </div>
+                                <div id="{$company_info_id}" class="{$company_info_display|display} innerForm">
+                                    <dl>
+                                        <dt>사업자 번호<span class="icoRequired">필수</span>{$form.regno_identity}</dt>
+                                        <dd>{$form.regno}</dd>
+                                    </dl>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer ec-base-button">
+        <button type="submit" class="btnSubmit sizeS">현금영수증 신청</button>
+    </div>
+    <button type="button" class="btnClose" onclick="javascript:self.close();">닫기</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자 지정 변수</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    :root{
+      --brand-color: #6cf;
+      --snd-color:#6fc;
+    }
+    .container{position: relative;}
+    header{min-height: 50px; background-color: rgba(255,255,255,0.3);
+    border-bottom : 1px solid var(--brand-color);
+    }
+    .content{
+      position: absolute; left: 0; top: 0; 
+      width: 100%; height: 100vh;
+      z-index: -1; /*position:static인 요소들보다 뒤로 가기*/
+    }
+    .content img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .content .slogan{
+      position: absolute;
+      left:50%; top:50%;
+      transform: translate(-50%, -50%);
+      padding: 2rem 2rem;
+      background-color: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--brand-color);
+      font-size: 4rem;
+      color:var(--brand-color);
+      font-weight: 700;
+    }
+    footer{
+       border-top: 1px solid var(--brand-color);
+      position: fixed;
+      width: 100%; /*브라우저의 너비를 따릅니다.*/
+      left:0; bottom: 0;
+      min-height: 50px; background-color: rgba(0,0,0,0.4);
+    
+    }
+  </style>
+</head>
+<body>
+  <!-- .container>header+.content+footer -->
+  <div class="container">
+    <header>헤더</header>
+    <div class="content">
+      <img src="https://picsum.photos/1200/900?random=1">
+      <div class="slogan">
+        Lorem ipsum dolor sit.
+      </div>
+    
+    </div>
+    <footer>푸터</footer>
+  </div>
+</body>
+</html>

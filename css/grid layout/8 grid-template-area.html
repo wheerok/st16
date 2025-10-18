@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8 grid-template-area</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    body{margin: 50px;}
+    /* 모양 */
+    .grid-container{
+      background-color: pink;
+    }
+    .header,
+    .lnb,
+    .main-content,
+    .footer{
+      background-color: dodgerblue;
+    }
+    /* grid */
+    .grid-container{
+      /* 1. 선언 */
+      display: grid;
+      /* 2 줄칸 수와 크기 지정 */
+      grid-template-rows:100px minmax(400px ,auto) 200px;
+      grid-template-columns: 250px 1fr;
+      /* 7-1번 그리드 영역이름 설정 */
+      grid-template-areas: 
+      "hd hd"
+      "side main"
+      "footer footer"
+      ;
+      /* 4 아이템간 여백 */
+      gap:10px;
+      
+    }
+    /* 3 정렬 */
+    /* 5 암시적 그리드의 크기 지정 grid-auto-rows, grid-auto-colums */
+    /* 6 아이템 배치 */
+
+    /* 7-2 그리드 영역에 아이템 배치 */
+    .header{grid-area: hd;}
+    .lnb{grid-area: side;}
+    .main-content{grid-area: main;}
+    .footer{grid-area: footer;}
+
+  </style>
+
+</head>
+<body>
+  <div class="grid-container">
+    <header class="header">헤더</header>
+    <aside class="lnb">lnb</aside>
+    <main class="main-content">메인</main>
+    <footer class="footer">푸터</footer>
+  </div>
+</body>
+</html>

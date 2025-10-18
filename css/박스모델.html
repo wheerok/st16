@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박스모델</title>
-    <style>
-        *{margin: 0; padding: 0;}
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박스모델</title>
+  <style>
+    /* reset */
+    *{ margin:0; padding:0;}
+
+    /* box model */
+    /* 요소는 사각형입니다. */
+    .box{ 
+      border: 1px solid #000;
+    }
+    .box1{
+      /* margin:상 우 하 좌 */
+      /* margin:50px 100px 200px 400px; */
+    }
+    .box2{
+      /* padding:상하 우좌  (하 좌) */
+      /* padding:50px 100px; */
+    }
+    .box{
+      /* margin: 값1  ; 상우하좌 동일 */
+      /* margin:50px; */
+    }
+    .box2{
+      margin-top:100px;
+    }
+    .box1{margin-top:50px;}
+    .container{
+      margin-top:50px;
+      /* border:4px dotted #f00; */
+    }
+    .box3{
+      /* 상 우 하 좌
+       상 우좌 하 
+      */
+      margin: 50px 100px 70px;
+    }
+    .box4{
+      /* 상 우 하 좌 
+      상하 우좌
+      */
+      margin: 50px 100px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="box box01">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, molestiae veniam! Ipsum delectus quas minus quam assumenda aut officia hic blanditiis cumque, iure, necessitatibus dolor vitae facilis eius atque aspernatur?
-        </div>
-
-        <div class="box box02">
-            Sit laudantium eum quas adipisci, quis optio non velit soluta perspiciatis maiores. Neque, quo voluptas minima eius vel quod, perspiciatis corrupti, at nisi consectetur ipsum tenetur saepe quam odit alias.
-        </div>
-
-        <div class="box box03">
-            Obcaecati est aspernatur quisquam ut minus debitis delectus nobis, fuga iste deleniti esse quis adipisci error ipsam? Quaerat in, nisi quod minima atque iure autem consequuntur libero ullam reprehenderit corporis!
-        </div>
-
-        <div class="box box04">
-            Est nam nulla animi id fuga aliquam, odit rerum, placeat a tempora consectetur odio iusto ad cumque ullam accusamus modi aut et iste earum quibusdam veniam, ipsum repudiandae. Maiores, dolorem.
-        </div>
-    </div>
+  <!-- .container>.box.box$*4>lorem -->
+  <div class="container">
+    <p class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste possimus consequatur asperiores, nobis voluptatem fugiat doloribus officia porro molestiae vero minima necessitatibus, accusantium reiciendis? Ea maiores officiis deserunt doloribus voluptatibus?</p>
+    <div class="box box2">Itaque quibusdam blanditiis voluptatibus expedita laudantium quod natus accusamus incidunt ut, optio tempora id nihil minus? Vero quod debitis saepe nobis est impedit inventore, veritatis tempora repudiandae, qui, reiciendis velit.</div>
+    <div class="box box3">Possimus eos sit atque voluptate eius. Fugit vitae, iste aliquid recusandae exercitationem esse cum! Perferendis beatae cum quaerat at, vero dolor earum quam exercitationem laboriosam quasi animi reiciendis cupiditate fugiat?</div>
+    <div class="box box4">Nesciunt fugiat illum soluta saepe magnam, nihil amet sunt voluptas, vel consequuntur ducimus fuga eum beatae officia nobis. Voluptas consequatur aut eaque? Laudantium, possimus vel voluptatem impedit deserunt facere labore!</div>
+  </div>
 </body>
 </html>

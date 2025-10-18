@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-wrap</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .section {
+      padding: 30px;
+    }
+
+    .section-title {
+      background-color: #ccc;
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    .section-content {
+      padding-top: 30px;
+    }
+
+    .section-content .item {
+      /* width: 100px;
+      min-height: 100px;  */
+      width: auto;
+      height: auto;
+      background-color: dodgerblue;
+      border: 1px solid darkblue
+    }
+
+    .section-content>div {
+      background-color: #f6e;
+    }
+
+    /* flex box 선언 */
+    /* .flex-container1,2,3,4, { */
+    .section-content>div {
+      display: flex;
+      /*해당 요소는 flex-container1,2,3,4
+      직계 자식요소는 flex item
+      */
+    }
+  </style>
+</head>
+
+<body>
+  <style>
+    .flex-container1{
+      padding:20px 0;
+      width: 600px;
+      display: flex; /*flex layout 선언*/
+      flex-direction: row; /*item 배치 방향*/
+      justify-content: flex-start; /*주축 방향 정렬*/ 
+    }
+    .flex-container1 .item{
+      /* flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto; */
+      flex:none;
+      width: 150px;
+    }
+  </style>
+  <div class="section">
+    <div class="section-title">1. flex-wrap:nowrap; 아이템의 총합이 .container 커도 줄바꿈x</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  
+  -->
+  <style>
+    .flex-container2{
+      width: 600px;
+      display: flex;
+      /* flex-direction: row; item 배치 방향 */
+      /* justify-content: flex-start; 주축 정렬 */
+      /* align-items:strech; 교차축의 정렬 부모크기에 맞게 늘어나라 */
+      align-items: center; /*item 이 wrap 되지 않는 상태*/
+      min-height: 200px;
+      flex-wrap: wrap;
+      align-content: center; /*flex-wrap 되었을 때 교차축 정렬*/
+    }
+    .flex-container2 .item{
+      /* flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto; */
+      flex:none;
+      width: 150px;;
+    }
+  </style>
+<div class="section">
+    <div class="section-title">2. flex-wrap:wrap; 아이템의 총합이 .container 크면 줄바꿈 O</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- flex-wrap:wrap; 단 레이아웃  -->
+  <style>
+    .flex-container3{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;/*.container의 크기 item 총합보다 작을 경우에 item 줄바꿈해서 배치*/
+      justify-content: flex-start;
+      align-content: start;
+      gap:10px;  /*4단  4-1 => gap 10x3 */
+    }
+    .flex-container3 .item{
+      /* flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto; */
+      flex:none;
+      width: calc(25% - 7.5px); /*gap:10px; 4단  4-1 => gao 10x3  30/4 -> 7.5px */
+    }
+  </style>
+<div class="section">
+    <div class="section-title">3. flex-wrap:wrap; 4단 레이아웃</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

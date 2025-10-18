@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container{
+      margin: 50px;
+      background-color: #ccc;
+    }
+    .box:nth-child(odd){background-color: #cf6;}
+    .box:nth-child(even){background-color: #fc6;}
+    .box{
+      width: 100px; height: 100px;
+      margin-bottom:100px;
+    }
+    .box1{
+      transform: translateX(0);
+    }
+    .box1:hover{
+      transform: translateX(50%);
+      transition: transform 1s ;
+    }
+    .box2, .box3{
+      /* display: inline-block; */
+    }
+    .box2, .box3{
+      transform: scale(1);
+       transition: all 0.5s;
+    }
+    .box2:hover, .box3:hover{
+      font-size:3rem;
+      transform: scale(1.4) rotate(360deg);
+      background-color: dodgerblue;
+      transition: all 1s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- .box.box$*3>{box$} -->
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+  </div>
+</body>
+</html>

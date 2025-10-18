@@ -1,16 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form 연습</title>
 </head>
 <body>
-    <h1>form 관련 태그</h1>
-    <form action="">
-        <fieldset>
-            <legend>폼태그 연습</legend>
-        </fieldset>
-    </form>
+  <h1>form 관련 태그</h1>
+  <form action="">
+    <fieldset>
+      <legend>form 연습</legend>
+      <label >아이디 : <input type="text" placeholder="아이디입력"></label>
+      <label for="pw">비밀번호</label>
+      <input type="password" placeholder="비밀번호" name="pw" id="pw">
+      <p>
+        <label for="">생일<input type="date" name="" id="" placeholder="생일"></label>
+      </p>
+      <p>
+        <input type="range">
+        <input type="color">
+      </p>
+      <p>
+        <label for="i_sex0">남</label> 
+        <input type="radio" id="i_sex0" name="i_sex">
+        <label for="i_sex1">여</label>
+        <input type="radio" id="i_sex1" name="i_sex">
+        <label for="i_sex2">여</label>
+        <input type="radio" id="i_sex3" name="i_sex" checked>
+      </p>
+      <p>
+        <label for="i_shipping1">항공</label>
+        <input type="checkbox" name="i_shipping" id="i_shipping1" checked>
+        <label for="i_shipping2">배</label>
+        <input type="checkbox" name="i_shipping" id="i_shipping2">
+        <label for="i_shipping3">기차</label>
+        <input type="checkbox" name="i_shipping" id="i_shipping3">
+      </p>
+      <p>
+        <input type="reset" value="취소">
+        <input type="submit" value="확인">
+        <input type="button" value="동작">
+        <input type="file" >
+      </p>
+      <p>
+        <button type="reset">취소</button>
+        <button type="submit">확인</button>
+        <button type="button">동작</button>
+      </p>
+      <p>
+        드롭다운 <br>
+        <select name="" id="">
+          <option value="">지역</option>
+          <option value="">서울</option>
+          <option value="">수원</option>
+          <option value="">용인</option>
+        </select>
+      </p>
+      <p>
+        드롭다운 <br>
+        <select name="" id="" multiple>
+          <option value="">지역</option>
+          <option value="">서울</option>
+          <option value="">수원</option>
+          <option value="">용인</option>
+        </select>
+      </p>
+      <p>
+        <select name="" id="">
+          <option value="">패밀리사이트</option>
+          <option value="https://www.naver.com">네이버</option>
+          <option value="">구글</option>
+        </select>
+      </p>
+      <p>
+        <textarea name="" id="" cols="20" rows="10"></textarea>
+      </p>
+    </fieldset>
+  </form>
 </body>
 </html>

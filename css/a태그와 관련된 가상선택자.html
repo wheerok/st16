@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a태그와 관련된 가상선택자</title>
+  <style>
+    body{
+      color:#f8c
+    }
+    /* 
+    a태그 조상의 color를 상속받지 않습니다.
+    a태그 글자색을 변경하기 위해서 해당요소 color 지정
+    */
+    a{
+      /* text-decoration: none;
+      color:#333; */
+    }
+    /* 
+    :선택자  css2
+    ::선택자 css3
+    
+    */
+    /* a:link{
+      color:#000;
+    }
+    a:visited{
+      color:#000;
+    }
+    a:hover{
+      color:#f00;
+    }
+    a:active{
+      color:#000;
+    } */
+
+    a:link,
+    a:visited,
+    a:active{
+      color:#000;
+      text-decoration: none;
+    }
+    a:hover{
+      color:#f00;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    .test1{
+      color:#000;
+    }
+    .test1:hover{
+      background-color: #000;
+      color:#fff;
+    }
+    /* 
+    .test1과 .test2 둘다 가진  요소
+    .test1 .test2 -> .test1의 후손 .test2
+    .test1 , .test2 -> .test1과  .test2
+    .test1.test2  ->  .test1과 .test2 둘다 가진  요소
+    */
+    .test1.test2:hover{
+      background-color: #f6c;
+      color:#cff;
+      border-left:4px solid #202
+    }
+  </style>
+  </head>
+<body>
+  <!-- ul>li*4>a>{menu$} -->
+  <ul>
+    <li><a href="https://www.naver.com">menu1</a></li>
+    <li><a href="https://google.com">menu2</a></li>
+    <li><a href="https://www.daum.net/">menu3</a></li>
+    <li><a href="https://www.nate.com/">menu4</a></li>
+  </ul>
+  <!-- p>lorem4 -->
+  <p class="test1">Lorem ipsum dolor sit.</p>
+  <!-- div>lorem2 -->
+  <div class="test2 test1">Lorem, ipsum.</div>
+  <div class="test1">Lorem, ipsum dolor.</div>
+</body>
+</html>

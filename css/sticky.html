@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sticky</title>
+   <style>
+    *{margin: 0; padding: 0;}
+    .container{}
+    .section{
+      padding: 10px;
+      /* overflow: hidden; sticky가 정상적으로 작용x */
+    }
+    .section:nth-child(odd){
+      background-color: #ef6;
+    }
+    .section:nth-child(even){
+      background-color: #f6e;
+    }
+    .section .title{
+      position: sticky;
+      top:0;
+      padding: 0.5rem 1rem;
+      background-color: rgba(255,0,0,0.5);
+      
+    }
+    .section .content-wrap{
+      height: 150vh;
+      /* height: 500px; */
+      background-color: rgba(0,0,0,0.5);
+    }
+   </style>
+</head>
+<body>
+  <div class="container">
+    <!-- .section.section$*4>p.title+div.content-wrap -->
+    <div class="section section1">
+      <p class="title">section1 title</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section2">
+      <p class="title">section2 title</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section3">
+      <p class="title">section3 title</p>
+      <div class="content-wrap"></div>
+    </div>
+    <div class="section section4">
+      <p class="title">section4 title</p>
+      <div class="content-wrap"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .container{
+    }
+    .banner-box{
+      margin-top:50px;
+     background-color: #efefef;
+     
+    }
+    .banner-box .inner{
+      width: 85%;
+      max-width: 1400px;
+      margin:0 auto;
+    }
+    .banner-box .banner-wrap{
+      padding: 50px 0;
+      font-size: 0;
+      margin:0 -10px
+    }
+    .banner-box .banner-wrap .banner{
+      display: inline-block;/*3단처리*/
+      width: 33.333%;/*3단처리*/
+      font-size: 16px;
+      padding:0 10px;
+    }
+    .banner-box .banner-wrap .banner img{
+      display:block; width:100%; object-fit: cover;
+    }
+
+    /* media query */
+    @media (max-width:767.98px){
+         .banner-box .inner{
+          width: auto;
+          max-width: none;
+          margin:30px;
+        }
+        .banner-box .banner-wrap{
+          padding-top: 30px;
+        }
+        .banner-box .banner-wrap .banner{
+          width: 100%;/*1단처리*/
+          padding-bottom:20px ;
+        }
+        .banner-box .banner-wrap .banner:last-child{
+          padding-bottom: 0;
+        }
+
+    }/*@media (max-width:767.98px){*/
+
+  </style>
+</head>
+<body>
+  <!-- 
+  데스크탑 3단 모바일 1단 배너
+  -->
+  <div class="container">
+    <div class="banner-box">
+      <div class="inner">
+        <div class="banner-wrap">
+          <div class="banner">
+            <img src="https://images.pexels.com/photos/6207744/pexels-photo-6207744.jpeg" alt="">
+          </div>
+          <div class="banner">
+            <img src="https://images.pexels.com/photos/6207744/pexels-photo-6207744.jpeg" alt="">
+          </div>
+          <div class="banner">
+            <img src="https://images.pexels.com/photos/6207744/pexels-photo-6207744.jpeg" alt="">
+          </div>
+        </div>
+      
+    </div>
+  
+  </div>
+  </div>
+</body>
+</html>

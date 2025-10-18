@@ -1,0 +1,47 @@
+/** subpage_theme02 (button_color - Lilac),(Webfont - Noto Sans KR) **/
+.theme02,
+.theme02 input,
+.theme02 select,
+.theme02 textarea,
+.theme02 code,
+.theme02 button {font-family:"Montserrat", "Noto Sans KR", Arial, sans-serif !important;}
+
+/* 버튼 */
+.theme02 .xans-product-action .action_button .sub_sold,
+.theme02 [class^='btnSubmit'],
+.theme02 a[class^='btnSubmit'] {background:#d8d9ed;color:#3a3a3a;}
+.theme02 [class^='btnNormal']:not(.disabled):hover,
+.theme02 [class^='btnNormal']:not(.disabled).selected {border-color:#555;}
+
+/* 최상단 배너 */
+.theme02 .main_top_banner {background-color:#d8d9ed;color:#fff;}
+
+/* 상단메뉴 */
+.theme02 #header .inner .top_nav_box .top_category > ul > li > a:after {background-color:#d8d9ed;}
+
+/* 메인 탭상품 상품진열 */
+.theme02 .main_product_category .main_product_inner .main_product_tab li .button:after {background-color:#d8d9ed;}
+
+/* 슬라이드바 */
+.theme02 .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {background:#d8d9ed;}
+
+/* 메인 지도 */
+.theme02 .main_map {background-color:#f5f4fa;}
+.theme02 .main_map .main_map_banner .main_map_banner_txt_box .main_long_banner_link a {background-color:transparent;}
+.theme02 .main_map .main_map_banner .main_map_banner_txt_box .main_long_banner_link a:hover {background-color:#3a3a3a;color:#fff;border:1px solid #3a3a3a;}
+
+/* 하단 */
+.theme02 #footer {background:#f5f4fa;}
+
+/* 모바일 슬라이드 */
+.theme02 #aside .navigation_member {background:#f5f4fa;}
+
+/* 목록페이지 중분류 */
+.theme02 .ec-base-tab.typeMenu li a.button {background-color:#f5f4fa;border:1px solid #f5f4fa;}
+.theme02 .ec-base-tab.typeMenu li.selected a.button {color:#1a1a1a;background-color:#fff;border:1px solid #1a1a1a;}
+
+/* 상품 할인율 */
+.theme02 .xans-product-detail .infoArea table .sale_box,
+.theme02 .ec-base-product .prdList .thumbnail .sale_box {background-color:#d8d9ed;color:#3a3a3a;}
+
+

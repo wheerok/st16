@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border-radius</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      width: 100px;
+      height: auto;
+      min-height: 100px;
+      margin:20px;
+      background-color: #ccc;
+    }
+    .box1{border-radius: 10px;}
+    .box2{border-radius: 10px 20px 30px 40px;}
+  /* .box3{border-radius: 50% 0 50% 0} */
+  .box3{border-radius: 50% 0 }
+  .box4{border-radius: 50%;}
+  .box5{border-radius: 0 0 50% 50%;}
+  .box6{
+    width:200px;
+    height: 100px;
+    border-radius: 50px;
+  }
+  /* 키워드 배너 */
+  /* 
+  1. 키워드
+     keyword1/keyword2 부모 안에서 키워드 한줄 표현, 
+     부모안에 가운데정렬
+     키워드 안 내용도에서 가운데 정렬
+  2. 키워드 테두리/모서리 둥글게
+  3. keyword1/keyword2 상하 여백
+  */
+  section{
+    margin-top:50px;
+  }
+  .keyword-wrap{
+    text-align: center; /*1*/
+    /*margin:50px 0;3*/
+  }
+  div.keyword1{ margin-bottom:10px;} /*3*/
+  div.kewyword-item{
+   display: inline-block; /*1★★★★*/
+   padding:0 1rem;/*1*/ 
+   line-height:40px; /*1, 한줄문자일때 높이지정*/
+   border:1px solid #efefef; /* 2 */
+   border-radius: 21px;
+
+  }
+  </style>
+</head>
+<body>
+  <section>
+    <!-- .keyword1>.kewyword-item*6>{keywrod00$} -->
+    <div class="keyword1 keyword-wrap">
+      <div class="kewyword-item">keywrod001</div>
+      <div class="kewyword-item">key2</div>
+      <div class="kewyword-item">keywrod3</div>
+      <div class="kewyword-item">wrod004</div>
+      <div class="kewyword-item">wrod005</div>
+      <div class="kewyword-item">wrod006</div>
+    </div>
+    <!-- .keyword2>.kewyword-item*5>{keywrod00$} -->
+    <div class="keyword2 keyword-wrap">
+      <div class="kewyword-item">keywrod001</div>
+      <div class="kewyword-item">key2</div>
+      <div class="kewyword-item">wrod003</div>
+      <div class="kewyword-item">wrod004</div>
+      <div class="kewyword-item">wrod005</div>
+    </div>
+  </section>
+  <hr>
+  <!-- .box.box$*6 -->
+  <div class="box box1"></div>
+  <div class="box box2">123</div>
+  <div class="box box3"></div>
+  <div class="box box4"></div>
+  <div class="box box5"></div>
+  <div class="box box6"></div>
+ 
+
+</body>
+</html>

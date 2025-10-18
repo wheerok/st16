@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 크기 지정</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    body{margin: 50px;}
+    .img-wrap{
+      background-color: #ccc;
+      border: 1px solid #000;
+      padding: 1em;/*.img-wrap에 지정된 font-size를 기준*/
+      width:80%;
+      /* height: 300px; */
+    }
+    /* 이미지 크기 고정 지정 */
+    /* .img-wrap img{width:300px; height: 200px;} */
+
+    /* 부모의 너비를 따라서 이미지 크기 유연하게 조정 
+        단 이미지 기본 비율은 유지
+    */
+    /* .img-wrap img{width:100%; height: auto;} */
+
+    /* 
+     이미지 부모의 높이를 따라가고 너비 비율맞춰서
+    */
+    .img-wrap img{
+      /* width:auto; height: 100%; */
+      /* text-align: center; */
+    }
+
+
+    /* 이미지 부모의 너비를 따르지만
+     이미지 원래 크기이상은 커지지 말아라
+     */
+    .img-wrap img{
+      width:auto; 
+      max-width: 100%;
+      height: auto;
+ 
+    }
+
+  </style>
+</head>
+<body>
+  <!-- .img-wrap>img -->
+  <div class="img-wrap">
+    <img src="https://images.pexels.com/photos/6207744/pexels-photo-6207744.jpeg" alt="">
+  </div>
+
+  <div class="img-wrap">
+    <img src="https://cdn-icons-png.flaticon.com/512/12280/12280650.png" alt="">
+  </div>
+</body>
+</html>

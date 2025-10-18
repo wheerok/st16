@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뷰티의 카드 디자인</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{
+      margin:50px; /*테스트용*/
+    }
+    /* 
+    작업 전 reset
+     */
+    ul,ol,li{list-style: none;}
+    /* 
+    이미지 크기 처리 방식
+    부모의 너비에 따라 유연크기 조정
+    width:100%;
+     .ec-base-product .prdList__item .thumbnail a img{
+     width:100%;
+     }
+    */
+  .ec-base-product{
+    width: auto;
+    /* background-color: #0f0;
+    border: 1px solid #080;
+    padding:10px 0; */
+  }
+  .ec-base-product ul.prdList{
+    width: auto;
+    /* background-color: #333; */
+    /* 
+    2. 상품 양옆으로 준 여백만큼 -margin
+        margin:0 -10px;
+    */
+    margin:0 -10px;
+
+    /* 
+     자식 요소 display: inline-block; 한칸공백문자 없애기
+    */
+    font-size:0;
+    line-height: 0;
+   
+    
+  }
+  .ec-base-product ul.prdList>li{
+    display: inline-block;
+    width:33.333%;
+    /* background-color: #ccc; */
+    /* border: 1px solid #f00; */
+     box-sizing: border-box;
+    /* ul에 글자크기 줄간격 0으로 설정한 것을 다시 설정
+      font-size:0;
+    line-height: 0;
+    다시 재설정
+    */
+    font-size: 16px;
+    line-height: 1.4;
+
+    /* 양옆의 10px 씩 들어오건 처리 */
+      /* margin:0 -10px; */
+    
+  }
+  .ec-base-product .prdList__item{
+    /* 
+    1. 상품간 여백을 위해서  .prdList__item
+       border 안쪽 여백을 이용해서 padding:0 10px;
+
+       35line에 2번처리
+    */
+    padding:0 10px;
+
+    /* 
+    2-2 의 상품설명이 사진 위에 겹쳐지게 하기 위해서
+        descripition의 기준요소가 되기 위해서
+          .ec-base-product .prdList__item .description{
+   position : absolutel
+  }
+    */
+    position: relative;
+    /* .prdList__item 크기 밖에 있는 것은 보이지 말아라 */
+    overflow: hidden;
+
+   
+  }
+
+  .ec-base-product .prdList__item .thumbnail{}
+  .ec-base-product .prdList__item .thumbnail a{
+    display: block;
+  }
+  .ec-base-product .prdList__item .thumbnail a img{
+    display: block;
+    width: 100%;/*부모의 너비를 따라서 유연한 크기 조정*/
+  }
+
+  .ec-base-product .prdList__item .description{
+    /* 2-2 사진위에 설명 겹치기위한 설정  */
+    position:absolute;/*누가 기준? .ec-base-product .prdList__item*/
+    left:10px; bottom:0;
+    /* 원래 위치에서 본인 수직크기만큼 아래로 이동 */
+    
+    width: calc(100% - 20px);/*.description 기준요소의 너비를 따라라*/
+    box-sizing: border-box;/*width => border + padding  +content */
+    background-color: rgba(255,255,255,0.5);
+    padding: 0.8em 1em;
+    transform: translateY(100%);
+    opacity: 0.5;
+    transition: all 0.3;
+  }
+  /* 상품에 마우스를 오버했을 때 .description은 썸네일 겹쳐라 */
+  .ec-base-product .prdList__item:hover .description{
+    /* left:10px; bottom:0;  동일한 값은 생략*/
+    /* 원위치에 있어라.  */
+     transform: translateY(0);
+     /* css 수치값이 변화는 과정을 보여주는 transition */
+     opacity:1;
+     transition: transform 1s;
+
+  }
+
+  .ec-base-product .prdList__item .description .name{
+    margin-bottom:0.5em;
+    font-weight: bold;
+  }
+  .ec-base-product .prdList__item .description .spec{}
+  .ec-base-product .prdList__item .description .spec li{}
+  </style>
+</head>
+
+<body>
+  <div class="ec-base-product">
+    <ul class="prdList grid4">
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="images/imgi_35_20250919161741682_2832.jpg" alt="상품명 1"></a>
+          </div>
+          <!-- //.thubnamil -->
+          <div class="description">
+            <div class="name">상품명1 </div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+          <!-- //.description -->
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="images/imgi_36_20250919160646130_3933.jpg" alt="상품명 2"></a>
+          </div>
+          <!-- //.thubnamil -->
+          <div class="description">
+            <div class="name">상품명1 </div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+          <!-- //.description -->
+        </div>
+      </li>
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="images/imgi_38_20250919160817340_2097.jpg" alt="상품명 3"></a>
+          </div>
+          <!-- //.thubnamil -->
+          <div class="description">
+            <div class="name">상품명1 </div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+          <!-- //.description -->
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

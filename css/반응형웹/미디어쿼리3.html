@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어쿼리 2 - 모바일 우선</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container{
+      /* width: 95%;
+      max-width: 1400px;
+      min-width: 992px; */
+      margin:0 200px;
+      background-color: #ccc;
+    }
+    h1{
+      font-size: 3rem;
+      margin-bottom: 30px;
+      padding: 0.5em;
+    }
+
+    @media (max-width:1399.98px){
+      .container{
+      width: 85%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #ef6;
+      }
+    }
+   
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>데스크탑 우선</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat id sed molestias nobis, quia laboriosam mollitia omnis, eos odio non error impedit veniam veritatis doloribus asperiores! Commodi unde voluptas magni!</p>
+    <p>데스크탑 우선은 @media 조건없이 작성하는 화면 데스크탑화면 스타일을 작업한다는 의미</p>
+  </div>
+</body>
+</html>

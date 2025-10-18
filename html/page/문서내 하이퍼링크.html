@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서내 하이퍼링크</title>
+  <style>
+    .section{
+      height: 100vh;
+    }
+    .section1{background-color: #8899cc;}
+    .section2{background-color: #cc8899;}
+    .section3{background-color: #88cc99;}
+    .section4{background-color: #993388;}
+  </style>
+</head>
+<body>
+  <h1>문서내 하이퍼링크</h1>
+  <div>
+    <h2>문서내 하이퍼링크 작성법</h2>
+    <ol>
+      <li>
+        <p>책갈피 넣기</p>
+        <p>문서내 이동하고 싶은 부분의 태그에 id 지정</p>
+      </li>
+      <li>
+        <p>책갈피 지정한 id를 href지정</p>
+        <p>&lt;a href="#아이디명"&gt;</p>
+      </li>
+    </ol>
+  </div>
+
+  <!-- 목차 -->
+   <h2>목차</h2>
+   <ul>
+    <li><a href="#section1">section1</a></li>
+    <li><a href="#section2">section2</a></li>
+    <li><a href="#section3">section3</a></li>
+    <li><a href="#section4">section4</a></li>
+    <li><a href="./../../하이퍼링크대상1.html">외부파일링크</a></li>
+    <li><a href="하이퍼링크대상1.html">외부파일링크</a></li>
+   </ul>
+  <!-- //목차 -->
+  
+  <!-- section.section$*4>div>{section$} -->
+  <section id="section1" class="section section1">
+    <div>section1</div>
+  </section>
+  <section id="section2" class="section  section2">
+    <div>section2</div>
+  </section>
+  <section id="section3" class="section  section3">
+    <div>section3</div>
+  </section>
+  <section id="section4" class="section section4">
+    <div>section4</div>
+  </section>
+  <div class="gotop">
+    <a href="#">위로</a>
+  </div>
+  <style>
+    .gotop{
+      position: fixed;
+      bottom:100px; right:100px;
+      padding: 20px;
+      background-color: rgba(255,255,255,0.5);
+    }
+  </style>
+</body>
+</html>

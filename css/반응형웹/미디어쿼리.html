@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어 쿼리</title>
+  <style>
+    *{margin: 0; padding: 0;}
+ 
+    .container{
+      /* .media-box 기준   */
+      position: relative;
+         /* .container 브라우저 크기를 다쓰게 크기지정 */
+      width: 100%; height: 100vh;
+      background: #2A7B9B;
+background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    }
+    .media-txt{
+      /* 
+      1. 기준 브라우저
+      2. 크기 :지정하지 않으면 자식요소의 너비 높이가 크기 결정
+      3. 위치 오른쪽 위에 고정
+      right:  top:;
+      */
+      position: fixed;
+      left: 50px; top:50px;
+      background-color: #fff;
+      border: 1px solid #000;
+      border-radius: 0.5em;
+      padding: 0.5em;
+      z-index: 100;
+    }
+    .media-txt::before{
+      content: "wide desk";
+    }
+
+    @media (max-width:1199.98px){
+       .media-txt::before{
+      content: "desk";
+    }
+    }
+
+   @media (max-width:1023.98px){
+             .media-txt::before{
+      content: "tablet";
+    }
+   }
+    @media (max-width:767.98px){
+             .media-txt::before{
+      content: "mobile";
+    }
+    }
+    
+    /* @media (max-width:576.98px){
+             .media-txt::before{
+      content: "mobile";
+    }
+    } */
+    @media (max-width:576.98px) and (orientation: portrait) {
+      .media-txt{left:30px; top:20px;}
+      .media-txt::before{
+      content: "mobile portrait";
+    }
+    }
+    
+
+    /* 1. 이미지과 브라우저 가운데 위치
+  2. 이미지크기는 이미지 비율을 따르면서 너비를 지정 */
+
+  .media-box{
+    /* 이미지 가운데오기 */
+    /* 
+    1. 기준  .container    2. 크기    3. 위치
+    */
+    position: absolute;
+    
+    /* 가운데 */
+    left:50%; top:50%;
+    transform: translate(-50%, -50%);
+    
+    /* 크기지정  */
+    box-sizing: border-box;
+    width: 50%;
+    max-width: 700px;
+    min-width: 360px;
+    padding:30px;
+
+    background-color:  rgba(255,255,255, 0.3); /* 투명배경색 */
+    border-radius: 20px; /* 모서리 둥글게 */
+    box-shadow: 0px 0px 30px 4px rgba(0,0,0,0.4);/* 그림자 */
+
+  }
+  .media-box .media-wrap{
+    width: auto;
+    aspect-ratio: 4/3;
+    /* 모서리 둥글게 */
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .media-box .media-wrap img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* 
+  media query
+  */
+
+/****** 
+  @media (max-width:1199.98px){  
+*******/
+  @media (max-width:1199.98px){
+    /* 11199.98이하 너비 작은 미디어에는  */
+    .container{
+      background: rgba(222, 40, 201, 5.1);
+      background: linear-gradient(148deg, rgba(222, 40, 201, 0) 0%, rgba(222, 40, 201, 1) 100%);
+    }
+    
+  }
+/****** 
+media (max-width:767.98px
+*******/
+  @media (max-width:767.98px){
+    /* 767.98px 이하인 미디어 디자인 css  */
+    .container{
+      background:#ef6
+    }
+    .media-box{
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .media-box .media-wrap{
+      border-radius: 10px;
+    }
+  }
+
+  /* 
+  
+  */
+@media (max-width:576.98px) and (orientation: portrait){
+ .media-box .media-wrap{
+  aspect-ratio: 3/4;
+ }
+
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- 
+  1. 이미지과 브라우저 가운데 위치
+  2. 이미지크기는 이미지 비율을 따르면서 너비를 지정
+  3. 장치마다(pc, 태블릿, 모바일) 구분을 배경색-그라디언트
+  -->
+  <div class="container">
+    <!-- 장치마다 내용(pc, 태블릿, 모바일)  -->
+    <div class="media-txt"></div>
+    <div class="media-box">
+      <div class="media-wrap"><img src="https://images.pexels.com/photos/6207744/pexels-photo-6207744.jpeg" alt=""></div>
+    </div>
+
+
+  </div>
+</body>
+</html>

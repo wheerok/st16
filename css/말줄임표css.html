@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>말줄임표css</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      margin:50px;
+      padding: 1em;/*자신의 font-size크기기준*/
+      background-color: #ccc;
+    }
+    /* 여러줄 말줄임 */
+    .box1{
+      /* white-space: normal; */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      width: 80%;
+      height:  70px;
+    }
+    /* 한줄 말줄임표 */
+    .box2{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* overflow */
+    /* 
+    박스모델 
+    너비 : 부모의 콘텐츠 영역
+    높이 : 자식(콘텐츠)의 높이
+    */
+    .box3,
+    .box4,
+    .box5{
+      width: 400px;
+      height: 40px;
+    }
+    /* overflow:visible */
+    .box3{overflow: visible;}
+    .box4{overflow: hidden;}
+    .box5{overflow: auto;}
+  </style>
+</head>
+<body>
+  <!-- .box.box$*2>lorem -->
+  <div class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem accusantium laboriosam quam hic, quasi voluptatibus perferendis voluptatum aliquid molestias dolore, illo quos eius asperiores velit unde architecto, minima dolores dolorum.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem accusantium laboriosam quam hic, quasi voluptatibus perferendis voluptatum aliquid molestias dolore, illo quos eius asperiores velit unde architecto, minima dolores dolorum.
+  </div>
+  <div class="box box2">Labore quae corporis voluptas rem natus magni animi consequuntur, quis deserunt sunt officiis inventore atque, eos a quasi? Blanditiis unde praesentium consequatur fugit eaque at nemo saepe reprehenderit quo architecto?</div>
+  <hr>
+  <!-- .box.box$@3*3>lorem -->
+  <div class="box box3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque eveniet pariatur dolores, tempore repellat eaque? Provident possimus perferendis ad nihil in, tempore expedita cumque fugit quam quas unde architecto incidunt!</div>
+  <div class="box box4">Sed in ab dolore eius quisquam illum, dolorem nobis voluptas facere blanditiis quod reprehenderit officia dolorum. Odio eos mollitia sapiente asperiores sunt at voluptates maxime vero, ipsam unde ratione illo!</div>
+   <div class="box box5">Sed in ab dolore eius quisquam illum, dolorem nobis voluptas facere blanditiis quod reprehenderit officia dolorum. Odio eos mollitia sapiente asperiores sunt at voluptates maxime vero, ipsam unde ratione illo!</div>
+</body>
+</html>

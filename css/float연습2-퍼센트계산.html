@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>float 연습2-퍼센트 계산</title>
+</head>
+<style>
+  *{margin: 0; padding: 0;}
+  .wrap{
+    background-color: #ccc;
+  }
+  header{
+    /* width: auto;
+    height: auto; */
+    min-height: 50px;
+    margin-bottom: 20px;
+    background-color: #f00;
+  }
+  .container{
+    width: 95%;
+    min-width: 1040px;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;/*float 지정된 자식요소를 인식*/
+    background-color: #aaa;
+  }
+  /* float 지정된 요소 이후에 있는 inline 요소에게서 float 영향 제거 */
+  .container::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .lnb{  /* 단으로 처리 */
+    float:left;
+    /* width:200px; */
+    /* width: 20%; */
+    width: calc(20% - 20px);
+    min-height: 400px;
+    margin-right:20px;
+    background-color: #ef6;
+  }
+  .main-wrap{  /* 단으로 처리 */
+    float:left;
+    /* width: 600px; */
+    /* width: 60%; */
+    width: calc(60% - 20px);
+    min-height: 500px;
+    background-color: #6fc;
+  }
+  .main-wrap section{}
+  .right{  /* 단으로 처리 */
+    float:right;
+    /* width: 200px; */
+    width: 20%;
+    min-height: 500px;
+    background-color: #fc6;
+  }
+  footer{
+    min-height: 100px;
+    background-color: #0f0;
+  }
+</style>
+
+<body>
+  <div class="wrap">
+    <header>헤더</header>
+    <div class="container">
+      <div class="lnb">lbn</div>
+      <!-- main.main-wrap>section -->
+      <main class="main-wrap">
+        <section>메인 내용</section>
+      </main>
+      <aside class="right">관련내용</aside>
+    </div>
+    <!-- //.container -->
+    <footer>푸터</footer>
+  </div>
+  <!-- //.wrap -->
+</body>
+
+</html>

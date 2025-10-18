@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-item</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .section {
+      padding: 30px;
+    }
+
+    .section-title {
+      background-color: #ccc;
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    .section-content {
+      padding-top: 30px;
+    }
+
+    .section-content .item {
+      /* width: 100px;
+      min-height: 100px;  */
+      width: auto; height: auto;
+      background-color: dodgerblue;
+      border: 1px solid darkblue
+    }
+
+    .section-content>div {
+      background-color: #f6e;
+    }
+
+    /* flex box 선언 */
+    /* .flex-container1,2,3,4, { */
+  .section-content>div {
+      display: flex;
+      /*해당 요소는 flex-container1,2,3,4
+      직계 자식요소는 flex item
+      */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .section>.section-title+.section-content -->
+   <style>
+    .flex-container1{
+      flex-direction: row;/*기본값*/
+    }
+    /* .item 은 크기지정이 없어요 */
+    .flex-container1 .item{
+      /* flex-grow: 0; 기본값 자동으로 늘어나지x */
+      /* 
+      flex container 가지고 있는 콘텐츠 영역의 크기가 맞게 item이 모두 포함될 수 있게 주축방향의 크기를 유연하게 늘려라
+      */
+      flex-grow: 1;
+      /* width:200px; */
+
+      /* 
+      .contaiern가 flex-direction:row;
+      item : 100px 아니고 container 영역 크기에 맞게
+      item 다 포함될 수 있을 만큼 늘어나요
+      flex-grow:1일 경우는 width:제 역활을 x
+      flex-grow:1; width:100px; 
+      */
+
+      /* 
+      .contaiern가 flex-direction:row;
+      item: 100px 보다 커지지않아요
+      flex-grow:0; width:100px;
+      */
+
+    }
+   </style>
+  <div class="section">
+    <div class="section-title">1. flex-item 자동 늘리기:  flex-grow: 1; flex-grow: 0;</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+         </div>
+    </div>
+  </div>
+
+  <!-- flex-shrink item 주축 크기의 수축 -->
+    <!-- .flex-contaiern가 flex-direction:row; 
+    주축은 왼->오 수평방향 
+    -->
+  <style>
+    /* 
+    flex-shrink : flex-containe가 item의 총합의 크기보다 작을 경우 item크기를 flex-containe 맞게 수축해라
+    
+    */
+ .flex-container2 .item{
+      flex-grow:0; /*기본값 item 크기 자동으로 늘어나지x*/
+      width:150px;
+      /*flex-shrink: 1;containe 크기가 item 총합의 크기보다 작다면 아이템을 container 다 포함할 수있게 줄어들어라*/
+      flex-shrink: 0;
+   }
+  </style>
+  <div class="section">
+    <div class="section-title">2. flex-shrink item 주축 크기의 수축</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 
+  flex item이 flex container 크기에 맞게 늘어나고 즐어들라
+  -->
+  <!-- .flex-contaiern가 flex-direction:row; 
+    주축은 왼->오 수평방향 
+    -->
+  <style>
+
+    .flex-container3 .item{
+      /* item에게 주축의 방향(width)의 크기 제한을 안했어요 */
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  </style>
+  <div class="section">
+    <div class="section-title">3.flex-grow:1; flex-shrink:1;</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+</div>
+
+<!-- flex item의 크기지정 flex-basis -->
+ <style>
+  /* flex-direction:row; 주축이 수평방향(width) */
+   .flex-container4 .item{
+     /* flex-grow: 1;
+     flex-shrink: 1; */
+     flex-grow: 0; flex-shrink: 0;
+     /* flex-basis와 주축방향의 크기를 같이 지정하면
+     flex-basis가 적용
+     */
+     flex-basis: 300px;
+     width:150px;
+   }
+ </style>
+  <div class="section">
+    <div class="section-title">4. flex 아이템의 기본 주축크기 지정  flex-basis</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container4">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+</div>
+
+</body>
+
+</html>

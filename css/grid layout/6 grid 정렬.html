@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6 grid 정렬</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    .grid-container *{box-sizing: border-box;}
+    /* 모양 */
+    .grid-container{
+      background-color: pink;
+      min-height: 600px; /*정렬을 위해서 테스트용*/
+    }
+    .item{
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+    }
+    /* grid */
+    .grid-container{
+      /* 1 그리드 선언 */
+      display: grid;
+      /* 2 행열 수와 크기 */
+
+      /* 2줄 3칸 */
+      /* grid-template-rows:repeat(3, 100px) ; */
+      grid-template-rows:repeat(3, auto) ;
+      grid-template-columns: repeat(3, 200px);
+
+
+      /* 3 정렬 지정 */
+      justify-content:start;/*container안수평*/
+      align-content: center;
+
+      /* 4 item간의 여백
+       justify-content, align-content space-* 값이 설정되어있을 때는 gap 무시
+      */
+      gap:10px 10px;
+
+
+      /* 
+      4 암시적 그리드 크기 설정
+      grid-auto-row, grid-auto-colomn  암시적 그리드 크기 지정
+      */
+      grid-auto-rows: 100px;
+
+
+      /* 6 정렬 */
+      /* 
+      cotainer 정렬선언
+      아이템에서 정렬선언
+      */
+      /* 컨테이너안에서 아이템 덩어리의 정렬 */
+      justify-content: center;/*수평*/
+      /* row의 값을 auto */
+      align-content: stretch;/*수직*/
+
+    }
+
+    /* 5 그리드 아이템의 배치 */
+    .item:nth-child(3){
+       justify-self:center ;
+       align-self: center;
+       min-width:50%;
+       min-height: 50px;
+
+    }
+    
+
+
+  </style>
+</head>
+<body>
+  <!-- .grid-container>.item*6{item$} -->
+  <div class="grid-container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+     <div class="item">item7</div>
+    <div class="item">item8</div>
+    <div class="item">item9</div>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <title>배송 가능 지역</title>
+    <!--@css(/css/module/order/ec_orderform/form_onetouch_popup.css)-->
+    <!--@js(/js/popup_scroll.js)-->
+    <!--@js(/layout/basic/js/common.js)-->
+</head>
+<body id="popup" class="v2">
+
+    <div module="Order_Customshiparea" class="ec-base-layer">
+        <div class="header">
+            <h1>배송 가능 지역</h1>
+        </div>
+        <div class="wrap">
+            <ul class="availableArea">
+                <li class="ec-base-card gBorder">
+                    <strong class="name">{$area_name}</strong>
+                    <p class="detail">우편번호 : {$begin_zipcode}~{$end_zipcode}</p>
+                </li>
+                <li class="ec-base-card gBorder">
+                    <strong class="name">{$area_name}</strong>
+                    <p class="detail">우편번호 : {$begin_zipcode}~{$end_zipcode}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="footer ec-base-button">
+            <button type="button" class="btnSubmit" onclick="OrderCustomshiparea.CloseLayer('dAreaLayer');">확인</button>
+        </div>
+        <button type="button" class="btnClose" onclick="javascript:self.close();">닫기</button>
+    </div>
+    
+</body>
+</html>

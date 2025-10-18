@@ -1,0 +1,85 @@
+:root{
+  --primary-color: #000000;
+  --accent-color:#33ffaa;
+}
+
+.myname{
+  --myswiper-bullet-color:var(--primary-color);
+  --myswiper-border-radius : 99999px;
+  --myswiper-bullet-width:8px;
+  --myswiper-bullet-height:8px;
+  --myswiper-bullet-opacity:0.4;
+  --myswiper-bullet-active-opacity:1;
+  --myswiper-bullet-active-color:var(--accent-color);
+
+  --myswiper-padding-bottom:30px;
+
+  --myswiper-scrollbar-bottom:var(var(--myswiper-padding-bottom))
+  --myswiper-scrollbar-top:auto;
+  --myswiper-scrollbar-left:0;
+  --myswiper-scrollbar-height:4px;
+  --myswiper-scrollbar-width:100%;
+}
+
+
+/********
+ siwper navigation 
+*/
+.myname .swiper-button-next svg path, 
+.myname .swiper-button-prev svg path{
+        fill: rgba(255,255,255,0.5);
+}
+
+.myname .swiper-button-next:hover svg path, 
+.myname .swiper-button-prev:hover svg path{
+        fill: white;
+        transition: all 0.5s;
+}
+
+/****
+swiper pagination
+색상변경 bullet의 모양 변경 변수선언
+*/
+
+.myname.swiper{
+  padding-bottom: var(--myswiper-padding-bottom); /*pagination의 위치를 그림밖으로 이동*/
+}
+.myname .swiper-pagination-bullet {
+    background: var(--myswiper-bullet-color);
+    border-radius: var(--myswiper-border-radius);
+    display: inline-block;
+    height: var(--myswiper-bullet-height);
+    opacity: var(--myswiper-bullet-opacity, .2);
+    width: var(--myswiper-bullet-width);
+}
+.myname .swiper-pagination-bullet-active {
+    background: var(--myswiper-bullet-active-color);
+    opacity: var(--myswiper-bullet-active-opacity, 1);
+}
+
+/*********
+swiper scrollbar
+위치조정  변수선언
+
+*/
+
+.swiper-scrollbar.swiper-scrollbar-horizontal,
+.swiper-horizontal>.swiper-scrollbar{
+  
+  bottom: var(--myswiper-scrollbar-bottom);
+  height: var(--myswiper-scrollbar-height, 4px);
+  left: var(--myswiper-scrollbar-left);
+  position: absolute;
+  top: var(--myswiper-scrollbar-top);
+  width: var(--myswiper-scrollbar-width) ;
+  z-index: 50;
+  
+  background:rgba(0,0,0,0.5);
+  border-radius: 0;
+  
+}
+
+.myname .swiper-scrollbar-drag {
+  /* background: rgba(255,255,255,1); */
+  background: rgba(0,0,0,1);
+}
