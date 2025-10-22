@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper slides per view</title>
+  <title>swiper slides per view-wconcept02</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <style>
@@ -17,9 +17,13 @@
       margin-top: 50px;
     }
 
+    .visual-section{
+        overflow: hidden;
+    }
+
     .myslide {
-      /* width: 600px; */
       width:80%;
+      overflow: visible;
     }
     .swiper-wrapper{
       /* gap:20px; */
@@ -31,7 +35,13 @@
     slidesPerView: 'auto'
     */
     .swiper-slide{
-      /* width:50%; */
+      opacity: 50%;
+      filter: grayscale(70%);
+    }
+
+     .swiper-slide-active{
+      opacity: 1;
+      filter: grayscale(0);
     }
 
     .swiper-slide img {
@@ -46,25 +56,25 @@
 
 <body>
   <!-- Slider main container -->
-  <div class="swiper myslide">
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=1" alt=""></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=2" alt=""></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=3" alt=""></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=4" alt=""></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=5" alt=""></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=6" alt=""></div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
+  <div class="visual-section">
+      <div class="swiper myslide">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="https://picsum.photos/800/600?random=1" alt=""></div>
+          <div class="swiper-slide"><img src="https://picsum.photos/800/600?random=2" alt=""></div>
+          <div class="swiper-slide"><img src="https://picsum.photos/800/600?random=3" alt=""></div>
+          <div class="swiper-slide"><img src="https://picsum.photos/800/600?random=4" alt=""></div>
+          <div class="swiper-slide"><img src="https://picsum.photos/800/600?random=5" alt=""></div>
+          <div class="swiper-slide"><img src="https://picsum.photos/800/600?random=6" alt=""></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
   </div>
 
 
@@ -74,10 +84,10 @@
       
 
       //.swiper-wrapper(view)에 몇개의 슬라이드 표시  
-      slidesPerView: 3,
+      slidesPerView: 'auto',
 
       // 슬라이드사이여백
-      spaceBetween: 10,
+      spaceBetween: 20,
       // active 슬라이드가 가운데오게설정
       centeredSlides: true,
        // 무한반복
