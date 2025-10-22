@@ -1,7 +1,26 @@
 *.psd
-*.ai
 *.pptx
-*.DS_Store
+*.ai
 *.zip
 참고문서/
-연습/
+테스트/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# Logs
+*.log
+
+cafe24/
