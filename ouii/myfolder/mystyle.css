@@ -2,6 +2,14 @@
 mystyle
 */
 
+/* 
+변수 variables
+*/
+
+:root {
+    --primary-color: #1f1f1f;
+}
+
 .ec-base-product .prdList{
     display: flex;
     flex-wrap: wrap;
@@ -205,12 +213,10 @@ hero section
 .visual-section{
     --visual-swiper-width: 100%;
 }
-@media (min-width: 1024px) {
-    #contents > .visual-section {
+@media (max-width: 1024px) {
+    #container #contents.ub-style{
         max-width: none;
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 .visual-section .visual_swiper{
@@ -226,5 +232,97 @@ hero section
     width:100%;
     height: auto;
     max-width: none;
+}
+
+
+
+/* 
+ub-swiper
+1. navigation 이미지 변경
+2. pagenation 색상 변경
+*/
+.ub-swiper .swiper-button-prev,
+.ub-swiper .swiper-button-next{
+    width:60px; height:60px;
+    background-size: contain;
+}
+.ub-swiper .swiper-button-prev{
+    background-image: url(images/arrow_back.svg);
+    background-position: left center;
+    left: 20px;
+    right: auto;
+}
+
+.ub-swiper .swiper-button-next {
+    background-image: url(images/arrow_forward.svg);
+    background-position: center;
+    right: 20px;
+    left: auto;
+}
+.ub-swiper .swiper-pagination{
+    left:0;
+    bottom:1rem;
+    width:100%;
+}
+.ub-swiper .swiper-pagination-bullet{
+    vertical-align: middle;
+    margin-right:12px;
+}
+.ub-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--primary-color);
+}
+
+/* 
+swiper controls가 슬라이드 아래 표시
+*/
+.ub-swiper.ub-swiper-controls-bottom{
+    width: 80%;
+    margin: 0 auto;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-wrapper{
+    align-items: end;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-slide{
+    width:100% !important;
+    transform: scale(0.9);
+    transform-origin: center bottom;
+    /* 사이즈가 조정되는 기준 위치 잡는 css */
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-slide-active{
+    transform: scale(1);
+}
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls{
+    display: flex;
+    gap:16px;
+    box-sizing: border-box;
+    align-items: center;
+    padding-top:10px;
+}
+
+/* flex-item */
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls>div{
+    position: static;
+    box-sizing: border-box;
+    flex-shrink: 1;
+}
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls .swiper-scrollbar{
+    order: 1;
+    width:100%;
+    height:4px;
+}
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls .swiper-pagination-fraction{
+    order: 2;
+    width:auto;
+    display: flex;
+    gap:0.5rem;
+    font-size: 0.8rem;
+}
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls .swiper-button-prev,
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls .swiper-button-next{
+    order: 3;
+    width:18px;
+    height:18px;
+    margin-top: 0;
 }
 

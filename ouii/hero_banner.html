@@ -84,45 +84,58 @@
     <div id="wrap">
         <!--@import(/layout/basic/header.html)-->
         <!--@import(/layout/basic/sidebar.html)-->
+
+        <!-- 
+            ub-swiper-controls-bottom 클래스 추가 시 swiper 스크립트의
+            pagenation을 type fraction으로 변경
+        -->
         <div id="container" data-ez="layout-0p6v6ja-1">
-            <div id="contents">
+            <div id="contents" class="ub-style">
                 <!-- 메인 콘텐츠 영역 -->
                 <!--@contents-->
-                <section class="section visual-section">
-                    <div class="swiper visual_swiper">
+                <section class="section visual-section section_full">
+                    <div class="swiper visual_swiper ub-swiper ub-swiper-controls-bottom">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
                             <div class="swiper-slide">
                                 <picture>
-                                    <source srcset="/ouii/myfolder/images/img01.png" media="(min-width:768px)">
-                                    <img src="/ouii/myfolder/images/img01-m.png" alt="">
+                                    <source srcset="/ouii/myfolder/images/img01-m.png" media="(max-width:768px)">
+                                    <img src="/ouii/myfolder/images/img01.png" alt="">
                                 </picture>
                             </div>
 
                             <div class="swiper-slide">
                                 <picture>
-                                    <source srcset="/ouii/myfolder/images/img02.png" media="(min-width:768px)">
-                                    <img src="/ouii/myfolder/images/img02-m.png" alt="">
+                                    <source srcset="/ouii/myfolder/images/img02-m.png" media="(max-width:768px)">
+                                    <img src="/ouii/myfolder/images/img02.png" alt="">
                                 </picture>
                             </div>
 
                             <div class="swiper-slide">
                                 <picture>
-                                    <source srcset="/ouii/myfolder/images/img03.png" media="(min-width:768px)">
-                                    <img src="/ouii/myfolder/images/img03-m.png" alt="">
+                                    <source srcset="/ouii/myfolder/images/img03-m.png" media="(max-width:768px)">
+                                    <img src="/ouii/myfolder/images/img03.png" alt="">
                                 </picture>
                             </div>
                         </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
+                        <div class="ub-swiper-controls">
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination">
 
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev">
 
-                        <!-- If we need scrollbar -->
-                        <div class="swiper-scrollbar"></div>
+                            </div>
+                            <div class="swiper-button-next">
+
+                            </div>
+                            <!-- If we need scrollbar -->
+                            <div class="swiper-scrollbar">
+
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -171,6 +184,9 @@
         // Optional parameters
         direction: 'horizontal',
         loop: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        // spaceBetween: 30,
         // autoplay: {
         // delay: 2500,
         // disableOnInteraction: false,
@@ -179,7 +195,7 @@
         // If we need pagination
         pagination: {
             el: '.swiper-pagination',
-            // type : 'fraction',
+            type : 'fraction',
             // type : 'progressbar',
         },
 
