@@ -8,6 +8,10 @@ mystyle
     box-sizing: border-box;
 }
 
+.main_product_slide .ec-base-product .prdList{
+flex-wrap: nowrap;
+}
+
 .ec-base-product .prdList > li{
     flex: none;
     margin:0 0 70px 0;
@@ -120,3 +124,107 @@ mystyle
     box-sizing: border-box;
     padding: 0 16px;
 }
+
+
+/* section 관련 스타일 수정 */
+/* .section{
+    border: 1px solid red;
+}
+.content-test{
+    border: 1px solid dodgerblue;
+    min-height: 200px;
+    background-color: #ccc;
+} */
+
+/* 
+1. section_full_content_center 
+
+section bgc
+content-testsms 가운데 정렬
+main_title이 content 너비 범위에서 정렬되어야 함
+*/
+
+.section{
+    /* section 변수 선언 */
+    --section-bg : rgb(255, 247, 216);
+    --section-padding-top-bottom:40px 0;
+    --section-main-banner-padding : 16px;
+}
+
+/* max-width: 1230px; */
+#contents > .section_full_content_center{
+    background-color: var(--section-bg);
+    width:100%;
+    max-width: none;
+    padding: var(--section-padding-top-bottom);
+}
+#contents > .section_full_content_center .main_3dan_banner .main_banner_txt{
+    margin-top: 0;
+    padding: var(--section-main-banner-padding);
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+
+@media (min-width: 1024px) {
+    #contents > .section_full_content_center > div{
+        max-width: 1230px;
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* 
+2. section_full_only_content
+제목은 기존 섹션의 너비에 맞춰 정렬
++ 콘텐츠는 브라우저 전체 사용
+*/
+/* max-width: 1230px; */
+#contents > .section_full_only_content{
+    background-color: var(--section-bg);
+    width:100%;
+    max-width: none;
+    padding: var(--section-padding-top-bottom);
+}
+
+@media (min-width: 1024px) {
+    #contents > .section_full_only_content > .main_title{
+        max-width: 1230px;
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* 
+visual_swiper
+hero section
+*/
+.visual-section{
+    --visual-swiper-width: 100%;
+}
+@media (min-width: 1024px) {
+    #contents > .visual-section {
+        max-width: none;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.visual-section .visual_swiper{
+    width: var(--visual-swiper-width);
+}
+.visual-section .swiper .swiper-slide{}
+.visual-section .swiper-slide picture{
+    display: block;
+}
+.visual-section .swiper-slide picture source,
+.visual-section .swiper-slide picture source img{
+    display: block;
+    width:100%;
+    height: auto;
+    max-width: none;
+}
+

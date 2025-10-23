@@ -126,7 +126,7 @@
 	*/
 
 	/* 메인 타이틀 */
-	.main_title .main_title_txt01 {font-size:calc(18px + (24 - 18) * ((100vw - 370px) / (1760 - 370)));}
+	.main_title .main_title_txt01{font-size:calc(18px + (24 - 18) * ((100vw - 370px) / (1760 - 370)));}
 	.main_title .main_title_txt02 {font-size:calc(13px + (16 - 13) * ((100vw - 370px) / (1760 - 370)));}
 
 	/* 이미지&텍스트갤러리 */
