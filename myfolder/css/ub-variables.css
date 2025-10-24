@@ -1,0 +1,24 @@
+/* ========================================
+   1. CSS 변수 정의
+======================================== */
+:root {
+  /* 간격 변수 */
+  --space-xs: 8px;
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 30px;
+  --space-xl: 40px;
+  --space-xxl: 120px;
+  
+  /* 레이아웃 변수 */
+  --max-width: 1230px;
+  --section-width: 92%;
+  
+  /* 반응형 breakpoint */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+

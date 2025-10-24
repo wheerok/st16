@@ -1,0 +1,309 @@
+@import url('./ub-variables.css');
+
+/* ========================================
+   1 기본 컨테이너 & 그리드 시스템
+======================================== */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 var(--space-md);
+}
+
+/* 섹션 너비 제한용 */
+.section {
+  width: var(--section-width);
+  margin: 0 auto;
+}
+
+/* 12컬럼 그리드 */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+   margin-left: calc(var(--space-md) * -1);
+  margin-right: calc(var(--space-md) * -1);
+  box-sizing: border-box;
+}
+
+[class*="col-"] {
+    padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+/* 12컬럼 기준 비율 계산 */
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }
+.col { flex: 1; } /* 자동 비율 배분용 */
+
+
+/* ========================================
+   2. Flex 컨테이너 (부모 요소에 적용)
+======================================== */
+
+/* 기본 flex */
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+
+/* 방향 설정 */
+.flex-row { flex-direction: row; }
+.flex-row-reverse { flex-direction: row-reverse; }
+.flex-col { flex-direction: column; }
+.flex-col-reverse { flex-direction: column-reverse; }
+
+/* 줄바꿈 설정 */
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+
+/* ========================================
+   3. 가로 정렬 (justify-content)
+======================================== */
+
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+
+
+/* ========================================
+   4. 세로 정렬 (align-items)
+======================================== */
+
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.items-center { align-items: center; }
+.items-baseline { align-items: baseline; }
+.items-stretch { align-items: stretch; }
+
+
+/* ========================================
+   5. 여러 줄 정렬 (align-content)
+======================================== */
+
+.content-start { align-content: flex-start; }
+.content-end { align-content: flex-end; }
+.content-center { align-content: center; }
+.content-between { align-content: space-between; }
+.content-around { align-content: space-around; }
+.content-stretch { align-content: stretch; }
+
+
+/* ========================================
+   6. Flex 자식 요소 (개별 아이템에 적용)
+======================================== */
+
+/* 크기 조절 */
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+.flex-3 { flex: 3; }
+.flex-auto { flex: auto; }
+.flex-none { flex: none; }
+
+/* 개별 세로 정렬 */
+.self-auto { align-self: auto; }
+.self-start { align-self: flex-start; }
+.self-end { align-self: flex-end; }
+.self-center { align-self: center; }
+.self-stretch { align-self: stretch; }
+.self-baseline { align-self: baseline; }
+
+/* 순서 변경 */
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+.order-first { order: -1; }
+.order-last { order: 999; }
+
+
+/* ========================================
+   7. 간격 (Gap) - 변수 활용
+======================================== */
+
+.gap-0 { gap: 0; }
+.gap-xs { gap: var(--space-xs); }    /* 8px */
+.gap-sm { gap: var(--space-sm); }    /* 10px */
+.gap-md { gap: var(--space-md); }    /* 16px */
+.gap-lg { gap: var(--space-lg); }    /* 30px */
+.gap-xl { gap: var(--space-xl); }    /* 40px */
+
+/* 기존 숫자 gap도 유지 */
+.gap-1 { gap: 0.25rem; }   /* 4px */
+.gap-2 { gap: 0.5rem; }    /* 8px */
+.gap-3 { gap: 0.75rem; }   /* 12px */
+.gap-4 { gap: 1rem; }      /* 16px */
+.gap-5 { gap: 1.25rem; }   /* 20px */
+.gap-6 { gap: 1.5rem; }    /* 24px */
+.gap-8 { gap: 2rem; }      /* 32px */
+.gap-10 { gap: 2.5rem; }   /* 40px */
+
+/* 가로/세로 간격 개별 설정 */
+.gap-x-0 { column-gap: 0; }
+.gap-x-md { column-gap: var(--space-md); }
+.gap-x-lg { column-gap: var(--space-lg); }
+.gap-y-0 { row-gap: 0; }
+.gap-y-md { row-gap: var(--space-md); }
+.gap-y-lg { row-gap: var(--space-lg); }
+
+
+/* ========================================
+   8. 자주 쓰는 조합 (유틸리티)
+======================================== */
+
+/* 가운데 정렬 (가로+세로) */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 양끝 정렬 + 세로 가운데 */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 세로 배치 + 가운데 */
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 가로 배치 + 끝 정렬 */
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+/* ========================================
+  9. 여백 유틸리티 (추가)
+======================================== */
+
+/* 마진 */
+.m-0 { margin: 0; }
+.m-auto { margin: 0 auto; }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+/* 패딩 */
+.p-0 { padding: 0; }
+.pt-sm { padding-top: var(--space-sm); }
+.pt-md { padding-top: var(--space-md); }
+.pt-lg { padding-top: var(--space-lg); }
+.pt-xl { padding-top: var(--space-xl); }
+.pb-sm { padding-bottom: var(--space-sm); }
+.pb-md { padding-bottom: var(--space-md); }
+.pb-lg { padding-bottom: var(--space-lg); }
+.pb-xl { padding-bottom: var(--space-xl); }
+
+
+/* ========================================
+   10. 반응형 (모바일 우선)
+======================================== */
+
+/* 작은 태블릿 (576px~) */
+@media (min-width: var(--breakpoint-sm)) {
+  .col-sm-6 { width: 50%; }
+  .col-sm-12 { width: 100%; }
+  
+  .flex-sm-row { flex-direction: row; }
+  .flex-sm-col { flex-direction: column; }
+  .justify-sm-start { justify-content: flex-start; }
+  .justify-sm-center { justify-content: center; }
+  .justify-sm-between { justify-content: space-between; }
+}
+
+/* 태블릿 (768px~) */
+@media (min-width: var(--breakpoint-md)) {
+  .col-md-1 { width: 8.33%; }
+  .col-md-2 { width: 16.66%; }
+  .col-md-3 { width: 25%; }
+  .col-md-4 { width: 33.33%; }
+  .col-md-5 { width: 41.66%; }
+  .col-md-6 { width: 50%; }
+  .col-md-7 { width: 58.33%; }
+  .col-md-8 { width: 66.66%; }
+  .col-md-9 { width: 75%; }
+  .col-md-10 { width: 83.33%; }
+  .col-md-11 { width: 91.66%; }
+  .col-md-12 { width: 100%; }
+  
+  .flex-md-row { flex-direction: row; }
+  .flex-md-col { flex-direction: column; }
+  .justify-md-start { justify-content: flex-start; }
+  .justify-md-center { justify-content: center; }
+  .justify-md-between { justify-content: space-between; }
+  .items-md-center { align-items: center; }
+  .items-md-start { align-items: flex-start; }
+  
+  .gap-md-lg { gap: var(--space-lg); }
+}
+
+/* 데스크톱 (1024px~) */
+@media (min-width: var(--breakpoint-lg)) {
+  .col-lg-1 { width: 8.33%; }
+  .col-lg-2 { width: 16.66%; }
+  .col-lg-3 { width: 25%; }
+  .col-lg-4 { width: 33.33%; }
+  .col-lg-5 { width: 41.66%; }
+  .col-lg-6 { width: 50%; }
+  .col-lg-7 { width: 58.33%; }
+  .col-lg-8 { width: 66.66%; }
+  .col-lg-9 { width: 75%; }
+  .col-lg-10 { width: 83.33%; }
+  .col-lg-11 { width: 91.66%; }
+  .col-lg-12 { width: 100%; }
+  
+  .flex-lg-row { flex-direction: row; }
+  .flex-lg-col { flex-direction: column; }
+  .justify-lg-start { justify-content: flex-start; }
+  .justify-lg-center { justify-content: center; }
+  .justify-lg-between { justify-content: space-between; }
+  .items-lg-center { align-items: center; }
+  .items-lg-start { align-items: flex-start; }
+  
+  .gap-lg-xl { gap: var(--space-xl); }
+}
+
+/* 대형 데스크톱 (1280px~) */
+@media (min-width: var(--breakpoint-xl)) {
+  .col-xl-1 { width: 8.33%; }
+  .col-xl-2 { width: 16.66%; }
+  .col-xl-3 { width: 25%; }
+  .col-xl-4 { width: 33.33%; }
+  .col-xl-6 { width: 50%; }
+  .col-xl-8 { width: 66.66%; }
+  .col-xl-12 { width: 100%; }
+  
+  .flex-xl-row { flex-direction: row; }
+  .justify-xl-between { justify-content: space-between; }
+}
