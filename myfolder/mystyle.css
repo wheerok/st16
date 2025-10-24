@@ -403,3 +403,13 @@ swiper controls가 슬라이드 아래 표시
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause.hidden{
   display: none;
 }
+
+/* 
+단처리
+ub-dan
+*/
+
+.ub-dan{}
+.ub-dan-row{}
+.ub-dan-item{
+}
