@@ -15,6 +15,8 @@
     <!-- // PG크로스브라우징필수내용 -->
 
     <title>hero banner</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="/ouii/layout/basic/css/common.css">
     <!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
     <link rel="stylesheet" href="/ouii/layout/basic/css/layout.css">
@@ -99,20 +101,20 @@
                             <!-- Slides -->
                             <div class="swiper-slide">
                                 <picture>
-                                    <source srcset="/myfolder/images/img1-m.png" media="(max-width:768px)">
-                                    <img src="/myfolder/images/img1.png" alt="">
+                                    <source srcset="/myfolder/images/img01-m.png" media="(max-width:768px)">
+                                    <img src="/myfolder/images/img01.png" alt="">
                                 </picture>
                             </div>
                             <div class="swiper-slide">
                                 <picture>
-                                    <source srcset="/myfolder/images/img2-m.png" media="(max-width:768px)">
-                                    <img src="/myfolder/images/img2.png" alt="">
+                                    <source srcset="/myfolder/images/img02-m.png" media="(max-width:768px)">
+                                    <img src="/myfolder/images/img02.png" alt="">
                                 </picture>
                             </div>
                             <div class="swiper-slide">
                                 <picture>
-                                    <source srcset="/myfolder/images/img3-m.png" media="(max-width:768px)">
-                                    <img src="/myfolder/images/img3.png" alt="">
+                                    <source srcset="/myfolder/images/img03-m.png" media="(max-width:768px)">
+                                    <img src="/myfolder/images/img03.png" alt="">
                                 </picture>
                             </div>
 
@@ -174,7 +176,7 @@
     <link rel="stylesheet" href="/ouii/layout/basic/css/add_theme03.css">
     <link rel="stylesheet" href="/ouii/layout/basic/css/add_layout.css">
 
-    <link rel="stylesheet" href="/ouii/myfolder/mystyle.css">
+    <link rel="stylesheet" href="/myfolder/mystyle.css">
 
     <!-- -------------------------------- -->
     <!--@css(/layout/basic/css/sub_style.css)-->
@@ -184,38 +186,7 @@
     <!--@css(/layout/basic/css/add_theme03.css)-->
     <!--@css(/layout/basic/css/add_layout.css)-->
 
-    <script>
-        const visual_swiper = new Swiper('.visual_swiper', {
-            // Optional parameters
-            direction: 'horizontal',
-            loop: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            // spaceBetween: 30,
-            // autoplay: {
-            // delay: 2500,
-            // disableOnInteraction: false,
-            // },
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction',
-                // type : 'progressbar',
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-        });
-    </script>
+    
 </body>
 
 </html>
