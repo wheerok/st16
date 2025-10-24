@@ -286,7 +286,6 @@ swiper controls가 슬라이드 아래 표시
 .ub-swiper.ub-swiper-controls-bottom .swiper-slide{
     width:100% !important;
     transform: scale(0.9);
-    transform-origin: center bottom;
     /* 사이즈가 조정되는 기준 위치 잡는 css */
 }
 .ub-swiper.ub-swiper-controls-bottom .swiper-slide-active{
