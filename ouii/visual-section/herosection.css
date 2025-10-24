@@ -1,0 +1,194 @@
+
+/*********
+visual-swiper
+hero section용
+*/
+.visual-section{
+  --visual-swiper-width:100%;
+}
+/* @media (min-width: 1024px) {
+    #contents.ub-style .visual-section  {
+        max-width: none;
+        width: 100%;
+    }
+} */
+ /* html에서 #contents class="ub-style" */
+@media (max-width: 1024px) {
+   #container #contents.ub-style  {
+        max-width: none;
+        width: 100%;
+    }
+}
+.visual-section .visual_swiper{
+  width: var(--visual-swiper-width);
+}
+.visual-section .swiper .swiper-slide{}
+.visual-section .swiper-slide picture{
+  display: block;
+}
+.visual-section .swiper-slide picture source,
+.visual-section .swiper-slide picture img{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+/* 
+ub-swiper
+1. navigation 이미지 변경
+2. pagination 색상변경
+ */
+ .ub-swiper .swiper-button-prev,
+ .ub-swiper .swiper-button-next{
+  width:60px; height: 60px;
+  background-size: contain;
+ }
+.ub-swiper .swiper-button-prev{
+    background-image: url(/myfolder/images/arrow_back.svg);
+   background-position: center;
+    left: 20px;
+    right: auto;
+}
+.ub-swiper  .swiper-button-next {
+    background-image: url(/myfolder/images/arrow_forward.svg);
+    background-position: center;
+    left: auto;
+    right: 20px;
+}
+.ub-swiper .swiper-pagination{
+  left:0;
+  bottom:1rem;
+  width: 100%;
+}
+.ub-swiper .swiper-pagination-bullet{
+  vertical-align: middle;
+  margin-right:10px;
+}
+.ub-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: transparent;
+    border:4px solid var(--primary-color);
+}
+
+/*******
+swiper controls가 슬라이드 아래 표시
+ */
+.ub-swiper.ub-swiper-controls-bottom{
+  width:80%;
+  margin:0 auto;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-wrapper{
+  /*하단에 정렬*/
+  /* align-items: end;   */
+
+  /* 슬라이드 .swiper-wrapper 기준 세로 가운데 */
+  align-items: center;  
+
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-slide{
+  width:100% !important;
+  transform: scale(0.9);
+  /*슬라이드를 하단에 정렬할 때는 transform-origin*/
+  /* transform-origin: center bottom;  */
+
+   /*슬라이드를 가운데에 정렬할 때는 transform-origin*/
+  transform-origin: center center; 
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-slide-active{
+  transform: scale(1);
+}
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:2rem;
+  box-sizing: border-box;
+  padding:0.5rem 0;
+}
+
+/* flex item */
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls>div{
+  position: static;
+  box-sizing: border-box;
+  
+}
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls .swiper-scrollbar{
+  order:1;
+  width: 100%;
+  height: 4px;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-pagination-fraction {
+  order:2;
+  width: auto;
+
+  display: flex;
+  gap:0.5rem;
+  font-size: 1rem;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-next,
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-prev{
+  width:24px; height: 24px;
+  margin-top:0;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-prev{
+  order:3;
+  background-position:4px center;
+  margin-left:30px;
+ 
+}
+
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-next{
+   order:5;
+  /* margin-left: -1.2rem; */
+}
+  
+  /* progressbar와 fraction을 함께 쓰는 방법 */
+
+/* progressbar 스타일링 */
+.ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar {
+  width: 100%;
+  max-width: 85%;
+  height: 4px;
+  background: rgba(0,0,0,0.1);
+}
+
+.ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: var(--primary-color);
+}
+
+/* 별도로 현재 페이지 번호 표시 */
+.ub-swiper.ub-swiper-controls-bottom .custom-fraction {
+  order:4;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* 자동 재생 토글 버튼 스타일링 */
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle{
+  order:6;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play,
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause{
+  display: inline-block ;
+  width: 24px; height: 24px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: center/contain no-repeat;
+}
+
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play{
+  background-image: url(/myfolder/images/play_arrow.png);
+}
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause{
+  background-image: url(/myfolder/images/pause.png);
+}
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play.hidden,
+.ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause.hidden{
+  display: none;
+}
