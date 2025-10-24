@@ -2,6 +2,9 @@
    1. CSS 변수 정의
 ======================================== */
 :root {
+  /* 색상 */
+  --primary-color: #1f1f1f;
+  
   /* 간격 변수 */
   --space-xs: 8px;
   --space-sm: 10px;
@@ -13,6 +16,7 @@
   /* 레이아웃 변수 */
   --max-width: 1230px;
   --section-width: 92%;
+  --dan-space: var(--space-sm);
   
   /* 반응형 breakpoint */
   --breakpoint-sm: 576px;

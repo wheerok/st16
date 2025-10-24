@@ -5,10 +5,12 @@ mystyle
 /* 
 변수 variables
 */
+@import url(/myfolder/css/ub-variables.css);
 
-:root {
-    --primary-color: #1f1f1f;
-}
+/* 
+그리드 시스템
+*/
+@import url(/myfolder/css/ub-grid-system.css);
 
 .ec-base-product .prdList{
     display: flex;
@@ -213,6 +215,7 @@ hero section용
 */
 .visual-section{
   --visual-swiper-width:100%;
+  padding-bottom:40px;
 }
 /* @media (min-width: 1024px) {
     #contents.ub-style .visual-section  {
@@ -291,12 +294,12 @@ swiper controls가 슬라이드 아래 표시
   /* align-items: end;   */
 
   /* 슬라이드 .swiper-wrapper 기준 세로 가운데 */
-  align-items: center;  
-
+  align-items: center;
+  gap:20px;
 }
 .ub-swiper.ub-swiper-controls-bottom .swiper-slide{
   width:100% !important;
-  transform: scale(0.9);
+  transform: scale(1);
   /*슬라이드를 하단에 정렬할 때는 transform-origin*/
   /* transform-origin: center bottom;  */
 
@@ -357,7 +360,7 @@ swiper controls가 슬라이드 아래 표시
 .ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar {
   width: 100%;
   max-width: 85%;
-  height: 4px;
+  height: 2px;
   background: rgba(0,0,0,0.1);
 }
 
