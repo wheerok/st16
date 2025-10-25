@@ -14,6 +14,7 @@ jQuery(document).ready(function ($) {
         loop: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        spaceBetween: 20,
         autoplay: { delay: 2500, disableOnInteraction: false },
         pagination: { el: ".swiper-pagination", type: "progressbar" },
         navigation: {

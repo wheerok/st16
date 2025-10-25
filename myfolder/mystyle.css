@@ -295,7 +295,6 @@ swiper controls가 슬라이드 아래 표시
 
   /* 슬라이드 .swiper-wrapper 기준 세로 가운데 */
   align-items: center;
-  gap:20px;
 }
 .ub-swiper.ub-swiper-controls-bottom .swiper-slide{
   width:100% !important;
