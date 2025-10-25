@@ -297,7 +297,7 @@ swiper controls가 슬라이드 아래 표시
   align-items: center;
 }
 .ub-swiper.ub-swiper-controls-bottom .swiper-slide{
-  width:100% !important;
+  /* width:100% !important; */
   transform: scale(1);
   /*슬라이드를 하단에 정렬할 때는 transform-origin*/
   /* transform-origin: center bottom;  */

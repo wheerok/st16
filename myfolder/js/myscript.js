@@ -22,6 +22,20 @@ jQuery(document).ready(function ($) {
           prevEl: ".swiper-button-prev",
         },
 
+        //화면 크기에 따른 맞춤 설정
+        breakpoints: {
+          0 : { //모바일
+            slidesPerView: 1,
+            spaceBetween: 0,
+            centeredSlides: false,
+          },
+          769 : { //타블렛 이상
+            slidesPerView : "auto",
+            spaceBetween : 20,
+            centeredSlides : true
+          }
+        },
+
         // 성능 최적화 옵션
         observer: true,
         observeParents: true,
