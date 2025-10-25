@@ -24,6 +24,11 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1300px;
   --breakpoint-xxl: 1533px;
+
+  /* section 변수 선언 */
+  --section-bg : rgb(255, 247, 216);
+  --section-padding-top-bottom:40px 0;
+  --section-main-banner-padding : 16px;
 }
 
 

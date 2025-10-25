@@ -412,3 +412,41 @@ ub-dan
 .ub-dan-row{}
 .ub-dan-item{
 }
+/* 
+단처리 태블릿 이하 스크롤
+.ub-dan-row.md-scroll
+*/
+@media (max-width: 1024px){
+  .section.ub-dan{
+    margin:0 auto;
+  }
+  .ub-dan-row.md-scroll{
+    /* scroll */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100% !important;
+    justify-content: start;
+  }
+
+  .ub-dan-row.md-scroll .ub-dan-item{
+    /* scroll */
+    scroll-snap-align: center;
+
+    width: 85%;
+    max-width: 50vw;
+
+    /* 요소의 크기가 늘지도 줄지 말고 지정된 width 값 따르게 */
+    flex: none;
+  }
+}
+
+
+@media (max-width: 480px){
+  .ub-dan-row.md-scroll .ub-dan-item{
+    max-width: 100%;
+  }
+}
