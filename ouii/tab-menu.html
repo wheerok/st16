@@ -14,8 +14,10 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <!-- // PG크로스브라우징필수내용 -->
 
-    <title>hero banner</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>탭메뉴 연습</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/ouii/layout/basic/css/common.css">
     <!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
@@ -32,9 +34,6 @@
     <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-product.css">
     <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-prdInfo.css">
     <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-paginate.css">
-
-    <link rel="stylesheet" href="/myfolder/css/ub-variables.css">
-    <link rel="stylesheet" href="/myfolder/css/ub-grid-system.css">
 
     <!-- -------------------------------- -->
     <!--@css(/layout/basic/css/common.css)--><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
@@ -65,9 +64,6 @@
         href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Red+Hat+Display:wght@400;500;700&display=swap"
         rel="stylesheet"><!-- theme04 -->
 
-    <link rel="stylesheet" href="/ouii/layout/basic/css/swiper.min.css">
-    <script src="/ouii/layout/basic/js/swiper-bundle.min.js"></script>
-
     <!--@css(/layout/basic/css/swiper.min.css)-->
     <!--@js(/layout/basic/js/swiper-bundle.min.js)-->
     <!--@js(/js/module/product/sale_price.js)-->
@@ -89,64 +85,59 @@
     <div id="wrap">
         <!--@import(/layout/basic/header.html)-->
         <!--@import(/layout/basic/sidebar.html)-->
-
-        <!-- 
-            ub-swiper-controls-bottom 클래스 추가 시 swiper 스크립트의
-            pagenation을 type fraction으로 변경
-        -->
         <div id="container" data-ez="layout-0p6v6ja-1">
-            <div id="contents" class="ub-style">
+            <div id="contents">
                 <!-- 메인 콘텐츠 영역 -->
                 <!--@contents-->
-                <section class="section visual-section section_full">
-                    <div class="swiper visual_swiper ub-swiper ub-swiper-controls-bottom">
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide">
-                                <picture>
-                                    <source srcset="/myfolder/images/img01-m.png" media="(max-width:768px)">
-                                    <img src="/myfolder/images/img01.png" alt="">
-                                </picture>
-                            </div>
-                            <div class="swiper-slide">
-                                <picture>
-                                    <source srcset="/myfolder/images/img02-m.png" media="(max-width:768px)">
-                                    <img src="/myfolder/images/img02.png" alt="">
-                                </picture>
-                            </div>
-                            <div class="swiper-slide">
-                                <picture>
-                                    <source srcset="/myfolder/images/img03-m.png" media="(max-width:768px)">
-                                    <img src="/myfolder/images/img03.png" alt="">
-                                </picture>
-                            </div>
+                <!-- 여기에 테스트 콘텐츠 복붙 -->
+                <section class="section main_product_category tab-vertical" data-ez-module="product-list-category/2"
+                    data-ez-layout="grid4" data-ez="contents-11tr69j-1">
 
+                    <div class="main_product_inner">
+                        <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center">
+                            <!-- 메인 베스트셀러 수정하는곳 -->
+                            <div class="main_title_txt01" data-ez-role="title">베스트 아이템</div>
+                            <div class="main_title_txt02" data-ez-role="subtitle">베스트 아이템을 만나보세요</div>
+                        </div><!-- //main_title -->
 
+                        <ul class="main_product_tab" data-ez-role="tab-list">
+                            <li data-ez-role="tab-item">
+                                <button type="button" class="button active" data-id="tabContent1"
+                                    data-ez-role="name" data-name="인기 사무실템">인기 사무실템</button>
+                            </li>
+                            <li data-ez-role="tab-item">
+                                <button type="button" class="button" data-id="tabContent2"
+                                    data-ez-role="name" data-name="심플 문구">심플 문구</button>
+                            </li>
+                            <li data-ez-role="tab-item">
+                                <button type="button" class="button"
+                                    data-id="tabContent3" data-ez-role="name" data-name="메모의 습관화">메모의 습관화</button>
+                            </li>
 
+                        </ul><!-- //main_product_tab -->
+                    </div><!-- //main_product_inner -->
+
+                    <div class="content_list" data-ez-role="content-list">
+                        <div class="tabcontent" id="tabContent1" data-ez-role="content-item">
+                            <div data-ez-holder="product_listmain">
+                                탭콘텐츠1
+                            </div>
                         </div>
-                        <div class="ub-swiper-controls">
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
 
-                            <!-- 커스텀 프랙션 요소 -->
-                            <div class="custom-fraction">
-                                <span class="current">1</span> / <span class="total">3</span>
+                        <div class="tabcontent" id="tabContent2" data-ez-role="content-item">
+                            <div data-ez-holder="product_listmain">
+                                탭콘텐츠2
                             </div>
-
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-
-                            <!-- If we need scrollbar -->
-                            <!-- <div class="swiper-scrollbar"></div> -->
-
-                            <!-- 일시정지/재생 버튼 -->
-                            <button id="btn-autoplay-toggle" class="">
-                                <span id="icon-pause" class="icon-pause">pause</span>
-                                <span id="icon-play" class="icon-play hidden">play_arrow</span>
-                            </button>
                         </div>
-                    </div>
+
+                        <div class="tabcontent active" id="tabContent3" data-ez-role="content-item">
+                            <div data-ez-holder="product_listmain">
+                                탭콘텐츠3
+                            </div>
+                        </div>
+
+
+                    </div><!-- //content-list -->
                 </section>
             </div>
         </div>
@@ -154,20 +145,7 @@
         <!--#ez="1/1"-->
     </div><!-- //wrap -->
 
-    <div id="progressPaybar" style="display:none;">
-        <div id="progressPaybarBackground" class="layerProgress"></div>
-        <div id="progressPaybarView">
-            <div class="box">
-                <h3>현재 결제가 진행중입니다.</h3>
-                <p class="txt">
-                    본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을 닫으시면<br>
-                    주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
-                </p>
-                <div class="progressbar"><img src="//img.echosting.cafe24.com/skin/skin/common/img_loading.gif"
-                        alt="loading" loading="lazy"></div>
-            </div>
-        </div>
-    </div>
+
 
     <div class="layer_shadow" id="layer_shadow"></div>
     <div id="layoutDimmed" class="dimmed"></div>
@@ -180,6 +158,7 @@
     <link rel="stylesheet" href="/ouii/layout/basic/css/add_layout.css">
 
     <link rel="stylesheet" href="/myfolder/mystyle.css">
+    <link rel="stylesheet" href="/ouii/tab.css">
 
     <!-- -------------------------------- -->
     <!--@css(/layout/basic/css/sub_style.css)-->
@@ -188,9 +167,6 @@
     <!--@css(/layout/basic/css/add_theme02.css)-->
     <!--@css(/layout/basic/css/add_theme03.css)-->
     <!--@css(/layout/basic/css/add_layout.css)-->
-
-    <script src="/myfolder/js/myscript.js"></script>
-    <!--@js<script src="/myfolder/js/myscript.js"></script>-->
 </body>
 
 </html>
